@@ -208,13 +208,3 @@ document.getElementById('nav-contact').addEventListener('click', function(e) {
   window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 });
 // Resume link is direct download, no scroll needed
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQCFX6GL92"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZQCFX6GL92');
-</script>
