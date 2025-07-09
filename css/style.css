@@ -17,6 +17,9 @@ html {
     padding: 0 1rem;
   }
   
+
+
+  
   /* Navbar */
   .navbar {
       position: fixed;
@@ -77,10 +80,10 @@ html {
   .avatar {
     margin-top: -1rem;
     margin-left: 50rem;
-    width: 400px; /* Adjust size of the avatar */
-    height: 400px;
+    width: 50vh; /* Adjust size of the avatar */
+    height: 50vh;
     border-radius: 50%;
-    border: 2px solid #6c0014;
+    border: 0.1rem solid #6c0014;
     object-fit: cover;
     
   }
