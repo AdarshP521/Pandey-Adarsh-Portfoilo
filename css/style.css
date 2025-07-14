@@ -416,7 +416,7 @@ margin-top: -5rem;
 }
 
 .myimg:hover{
-    transform: scale(1.1);
+  transform: translateY(-5px) scale(1.1);
 }
 
 .pg2 {
@@ -441,6 +441,7 @@ margin-top: -5rem;
 
 
   /* ===== EXPERIENCE & CERTIFICATES SECTION ===== */
+
   .experience-certificates {
     background: #000000;
   }
@@ -671,7 +672,7 @@ margin-top: -5rem;
 
   .cert-date {
     display: inline-block;
-    background:#00bfff;
+    background:#6765e0;
     color:#000000;
     padding: 0.18rem 0.5rem;
     border-radius: 16px;
@@ -708,93 +709,6 @@ margin-top: -5rem;
     background: transparent;
     color: #00bfff;
     transform: scale(1.05);
-  }
-
-  /* Responsive Design for Experience & Certificates */
-  @media (max-width: 1024px) {
-    .exp-cert-container {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
-    
-    .certificates-grid {
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    }
-  }
-
-  @media (max-width: 768px) {
-    .experience-certificates {
-      padding: 3rem 0;
-    }
-    
-    .exp-cert-container {
-      gap: 2rem;
-    }
-    
-    .experience-section,
-    .certificates-section {
-      padding: 1.5rem;
-    }
-    
-    .timeline-item {
-      padding-left: 50px;
-    }
-    
-    .timeline-dot {
-      left: 6px;
-      width: 16px;
-      height: 16px;
-    }
-    
-    .timeline-content {
-      padding: 1rem;
-    }
-    
-    .certificates-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    
-    .certificate-content {
-      padding: 1rem;
-    }
-    
-    .certificate-skills {
-      gap: 0.6rem;
-    }
-    
-    .certificate-skills span {
-      font-size: 0.75rem;
-      padding: 0.3rem 0.6rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .experience-certificates {
-      padding: 2rem 0;
-    }
-    
-    .experience-section,
-    .certificates-section {
-      padding: 1rem;
-    }
-    
-    .timeline-content h3 {
-      font-size: 1.1rem;
-    }
-    
-    .certificate-content h3 {
-      font-size: 1.1rem;
-    }
-    
-    .certificate-skills {
-      gap: 0.5rem;
-    }
-    
-    .certificate-skills span {
-      font-size: 0.7rem;
-      padding: 0.25rem 0.5rem;
-    }
   }
 
 
