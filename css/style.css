@@ -1726,7 +1726,7 @@ font-family: Georgia, 'Times New Roman', Times, serif;
   color: #f7f7ff;
   text-align: center;
   padding: 1.5rem 0;
-  margin-top: 6rem;
+  margin-top: 3.8rem;
   /* margin-bottom: 2rem; */
   background-color: #0d0d0d;
   border-radius: 10rem;
@@ -1889,6 +1889,36 @@ font-family: Georgia, 'Times New Roman', Times, serif;
 .back-to-top:hover {
   background: #5452c7;
   transform: translateY(-6px) scale(1.08);
+}
+
+/* social links button css */
+.button11 {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 2rem;
+  width: 10em;
+  position: relative;
+  height: 2em;
+  border: 3px ridge #5452c7;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  transition: 1s;
+  border-radius: 0.3em;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.button11:hover {
+  background-color: #5ac8fa;
+  color: #000000;
+  box-shadow: 0 4px 10px 0 #6765e0;
 }
 
 
