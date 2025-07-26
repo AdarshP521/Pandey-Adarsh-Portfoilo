@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pandeyadarshyt.netlify.app/sitemap.xml
