@@ -399,7 +399,26 @@ margin-left: 20rem;
     text-align: center;
     margin-top: 4rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    display:flex;
+    justify-content: center;
   }
+
+/* added animination line under it  */
+
+.Aboutme h2::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 5px;
+    bottom: -5px;
+    background-color: #6765e0;
+    transition: width 0.5s ease;
+  }
+
+.Aboutme h2:hover::after {
+    width: 60%;
+}
   
 
 /* for about me 1 */
@@ -479,6 +498,7 @@ margin-top: -5rem;
   }
 
   /* Experience Section */
+
   .experience-section {
     font-size: 2rem;
     color: #f7f7ff;
@@ -735,11 +755,29 @@ margin-top: -5rem;
 
     .Skill h2 {
       text-align: center;
-      margin-top: 1.55rem ;
+      margin-top: 3.5rem ;
     font-size: 3rem;
         color: #f7f7ff;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    display:flex;
+    justify-content: center;
+
   }
+
+    .Skill h2::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 5px;
+    bottom: -0.001rem;
+    background-color: #6765e0;
+    transition: width 0.5s ease;
+  }
+
+    .Skill h2:hover::after {
+    width: 15%;
+}
 
 body {
 font-weight: bold;
@@ -756,7 +794,7 @@ font-weight: bold;
   grid-template-rows: repeat(7, 1fr);   /* 7 rows */
   gap: 12px 12px;
   max-width: 1400px;
-  margin: 2rem auto;
+  /* margin: 2rem auto; */
   width: 100%;
 }
 
@@ -1014,7 +1052,24 @@ font-weight: bold;
     margin-bottom: 1.5rem;
     color: #f7f7ff;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    display:flex;
+    justify-content: center;
   }
+
+  .featured h2::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 5px;
+    bottom: -0.001rem;
+    background-color: #6765e0;
+    transition: width 0.5s ease;
+  }
+
+  .featured h2:hover::after {
+    width: 30%;
+}
 
 
     .projects {
@@ -1271,6 +1326,7 @@ cursor: pointer;}
 }
 
 /* Specific card styles */
+
 .card1 { grid-area: card1; }
 .card2 { grid-area: card2; }
 .card3 { grid-area: card3; }
