@@ -208,3 +208,28 @@ document.getElementById('nav-contact').addEventListener('click', function(e) {
   window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 });
 // Resume link is direct download, no scroll needed
+
+
+function updateClock() {
+    const now = new Date();
+    
+    const time = now.toLocaleTimeString('en-US', { 
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    });
+    
+    const date = now.toLocaleDateString('en-US', { 
+        weekday: 'long',
+        month: 'long',
+        day: 'numeric'
+    });
+    
+    document.getElementById('time').textContent = time;
+    document.getElementById('date').textContent = date;
+}
+
+// Initialize clock
+updateClock();
+setInterval(updateClock, 1000);

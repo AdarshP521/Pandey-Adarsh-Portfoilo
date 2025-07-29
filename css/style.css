@@ -1731,16 +1731,79 @@ font-family: Georgia, 'Times New Roman', Times, serif;
     color: #6765e0;
 }
 
+/* footer bar */
 
-.footer{
+.footer {
+  display: flex;
+  align-items: center;      /* Vertically center content */
+  justify-content: center;  /* Horizontally center content */
   color: #f7f7ff;
   text-align: center;
   padding: 1.5rem 0;
-  margin-top: 3.8rem;
-  /* margin-bottom: 2rem; */
+  margin-top: 3rem;
   background-color: #0d0d0d;
   border-radius: 10rem;
+  height: 6rem;
 }
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding-right: 10rem;
+}
+
+/* clock */
+
+.clockcont {
+  display: flex;
+  justify-content: flex-start;   /* Align to the left horizontally */
+  align-items: center;           /* Center vertically in the footer */
+  width: 100%;
+  height: 100%;                  /* Make sure parent/footer has a set height */
+  padding-left: 2rem;
+  margin: 0;
+  width: 10rem;
+
+}
+
+.clock {
+    background: #ffffff1a;
+    width: 8rem;
+    backdrop-filter: blur(20px);
+    border-radius: 10rem;
+    /* padding: 40px; */
+    text-align: center;
+    border: 0.01rem solid #6765e0;
+    font-family: 'JetBrains Mono', monospace;}
+
+.time {
+    font-size: 1rem;
+    color: #f7f7ff;
+    margin-bottom: 0.5rem;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.date {
+    font-size: 0.5rem;
+    color: #f7f7ff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+@keyframes glow {
+    from { text-shadow: 0 0 20px #ffffff80; }
+    to { text-shadow: 0 0 30px #ffffffcc; }
+}
+
+/* @media (max-width: 768px) {
+    .time { font-size: 3rem; }
+    .clock { padding: 30px; }
+} */
+
+
 
   .car-wrapper {
     position: fixed;
@@ -1799,7 +1862,7 @@ font-family: Georgia, 'Times New Roman', Times, serif;
   height: 48px;
   border-radius: 50%;
   background: #6765e0;
-  color: #fff;
+  color: #f7f7ff;
   border: none;
   font-size: 2rem;
   box-shadow: 0 4px 16px rgba(103,101,224,0.18);
@@ -1832,9 +1895,9 @@ font-family: Georgia, 'Times New Roman', Times, serif;
   position: relative;
   height: 2em;
   outline: none;
-  border: #ffffff1a;
-  background-color:#ffffff1a;
-  color: white;
+  border: 0.02rem solid #6765e0;
+  background-color:#f7f7ff;
+  color: f7f7ff;
   transition: 1s;
   border-radius: 0.3em;
   font-size: 16px;
@@ -1862,7 +1925,7 @@ font-family: Georgia, 'Times New Roman', Times, serif;
   left: 0;
   width: 100%;
   height: 4px;
-  background: rgba(255, 255, 255, 0.1);
+  background: #ffffff1a;
   z-index: 1001;
   transition: opacity 0.3s ease;
 }
@@ -1878,7 +1941,7 @@ font-family: Georgia, 'Times New Roman', Times, serif;
   width: var(--scroll-width, 0%);
   transition: width 0.1s ease;
   border-radius: 0 2px 2px 0;
-  box-shadow: 0 0 10px rgba(90, 200, 250, 0.5);
+  box-shadow: 0 0 10px #5ac8fa80;
   animation: gradient-shift 3s ease infinite;
 }
 
