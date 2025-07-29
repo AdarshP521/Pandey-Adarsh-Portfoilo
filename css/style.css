@@ -69,6 +69,11 @@ html {
     gap: 1rem;
     padding-top: 4%;
   }
+
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
   
   .avatar-wrapper {
     position: relative;
@@ -85,6 +90,26 @@ html {
     object-fit: cover;
     
   }
+
+    .avatar {
+    animation: pulse-border 2s infinite;
+  }
+
+/* TOP AVTAR */
+
+
+  @keyframes pulse-border {
+    0% {
+      box-shadow: 0 0 0 0 #737373;
+    }
+    70% {
+      box-shadow: 0 0 0 10px #0f111a;
+    }
+    100% {
+      box-shadow: 0 0 0 0 #0f111a;
+    }
+  }
+
   
   .hero h1 {
     margin-top: -18rem;
@@ -375,6 +400,7 @@ margin-left: 20rem;
     margin-top: 4rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
+  
 
 /* for about me 1 */
 
@@ -413,7 +439,9 @@ margin-top: -5rem;
 }
 
 .myimg:hover{
-  transform: translateY(-5px) scale(1.1);
+ transform: translateY(-10px); 
+  transform:scale(1.1);
+  transition: transform 0.3s ease;
 }
 
 .pg2 {
@@ -1511,6 +1539,7 @@ box-shadow: 0 10px 50px #ff001e;
 }
 
 /* === removing default button style ===*/
+
 .location{
   font-family: 'Times New Roman', Times, serif;
   font-size: 2rem;
@@ -1656,27 +1685,6 @@ font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: #0d0d0d;
   border-radius: 10rem;
 }
-
-  
-  .avatar {
-    animation: pulse-border 2s infinite;
-  }
-  
-
-/* TOP AVTAR */
-
-
-  @keyframes pulse-border {
-    0% {
-      box-shadow: 0 0 0 0 #737373;
-    }
-    70% {
-      box-shadow: 0 0 0 10px #0f111a;
-    }
-    100% {
-      box-shadow: 0 0 0 0 #0f111a;
-    }
-  }
 
   .car-wrapper {
     position: fixed;
