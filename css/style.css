@@ -1788,7 +1788,7 @@ font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .clock {
-    background: #ffffff1a;
+    background: #6765e0;
     width: 8rem;
     backdrop-filter: blur(20px);
     border-radius: 10rem;
@@ -1796,6 +1796,13 @@ font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
     border: 0.01rem solid #6765e0;
     font-family: 'JetBrains Mono', monospace;}
+
+
+    .clock:hover{
+    box-shadow: 0 4px 16px #6765e0;
+    transform: scale(1.05);
+    transition: transform 0.3s ease, box-shadow 1s ease
+    }
 
 .time {
     font-size: 1rem;
