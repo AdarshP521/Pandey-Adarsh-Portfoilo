@@ -748,14 +748,14 @@ font-weight: bold;
   margin: 0;
 }
 
-.skills-container {
+/*.skills-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 columns */
-  grid-template-rows: repeat(7, 1fr);   /* 7 rows */
+  grid-template-columns: repeat(5, 1fr); 
+  grid-template-rows: repeat(7, 1fr); 
   gap: 12px 12px;
   max-width: 1400px;
   /* margin: 2rem auto; */
-  width: 100%;
+  /* width: 100%; 
 }
 
 .skill {
@@ -765,15 +765,15 @@ font-weight: bold;
   margin-top: 2rem;
 }
 
-/* --- SKILLS SECTION GLASS CARD & ICON --- */
+/* --- SKILLS SECTION GLASS CARD & ICON ---
 .skill {
-  background: #ffffff14; /* glass effect */
+  background: #ffffff14; /* glass effect
   backdrop-filter: blur(8px);
   border: 1.5px solid #ffffff21;
   border-radius: 1.2rem;
   box-shadow: 0 4px 24px 0 #5ac8fa14;
   padding: 1.2rem 1.5rem;
-  margin-bottom: 0.2rem; /* Even less margin between cards */
+  margin-bottom: 0.2rem; /* Even less margin between cards
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -792,7 +792,7 @@ font-weight: bold;
   gap: 0.7rem;
   font-weight: 500;
   font-size: 1.2rem;
-  justify-content: space-between; /* Numbers right-aligned */
+  justify-content: space-between; /* Numbers right-aligned
 }
 
 .skill-header .skill-icon {
