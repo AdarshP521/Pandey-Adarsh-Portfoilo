@@ -206,19 +206,11 @@ margin-left: 20rem;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
-/* .quote:hover{
-  color: #ff0000;
-  transition: color 0.3s ease;
-  font-family: 'Times New Roman', Times, serif;
-  
-} */
-
-
 /* youtube button */
 
 .Btn {
-  margin-left: 63rem;
-  margin-top: -6rem;
+  margin-left: 64rem;
+  margin-top: -4rem;
   width: 45px;
   height: 45px;
   display: flex;
@@ -270,28 +262,11 @@ margin-left: 20rem;
   backdrop-filter: blur(4px);
 }
 
-.youtube{
-  color:#ffffff;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: xx-large;
-  margin-left: 54rem; 
-  margin-top: -3rem;
-  text-decoration: none;
-}
-
-.youtube:hover{
-  color: #ff0000;
-  transition: color 1s ease;
-  font-family: 'Times New Roman', Times, serif;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-} 
 /* linked button */
 
 .LinkedinBtn {
-  margin-left: 63rem;
-  margin-top: 2%;
+  margin-left: 73rem;
+  margin-top: -3%;
   width: 45px;
   height: 45px;
   display: flex;
@@ -344,22 +319,6 @@ margin-left: 20rem;
   background-color: rgba(156, 156, 156, 0.466);
 }
 
-.linkedin{
-    color:#ffffff;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: xx-large;
-  margin-left: 54rem; 
-  margin-top: -3rem;
-}
-
-.linkedin:hover{
-  color: #00a6ff;
-  transition: color 1s ease;
-  font-family: 'Times New Roman', Times, serif;
-  text-decoration: underline;
-  font-weight: bold;
-  cursor: pointer;
-} 
   
   .tags {
     display: flex;
@@ -390,8 +349,6 @@ margin-left: 20rem;
     color: #ff0000;
     cursor: pointer;
   }
-
-
 
   /* about me */
 
@@ -1417,7 +1374,7 @@ cursor: pointer;}
 .video-btn:hover {
     background: #00fe9b;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px #6765e04d;
+    box-shadow: 0 3px 9px #6765e0; 
     color: #000000;
 }
 
@@ -1622,11 +1579,13 @@ box-shadow: 0 10px 50px #ff001e;
   display: block;
   margin-top: 1.1rem;
   margin-left: 0rem;
-  cursor: pointer;  
+  cursor: pointer;
+    letter-spacing:0.5rem;
 }
 
 .location:hover{
-    color: #5ac8fa;
+  color: #5ac8fa;
+  text-shadow: 0 4px 8px #6765e0; 
   transition: color 1s ease;
   cursor: pointer;
 }
@@ -1684,6 +1643,8 @@ font-family: Georgia, 'Times New Roman', Times, serif;
   color: #5ac8fa;
   transition: color 1s ease;
   cursor: pointer;
+  text-shadow: 0 4px 8px #6765e0; 
+
 }
 
 /* ===== SOCIAL ICONS ===== */
@@ -1716,9 +1677,18 @@ font-family: Georgia, 'Times New Roman', Times, serif;
   overflow: hidden;
 }
 
-.icon-content a:hover {
+/* .icon-content a:hover {
   background: var(--primary-color);
   transform: scale(1.1);
+  box-shadow: 0 4px 16px #6765e0;
+} */
+
+
+.icon-content a:hover{
+    transform: scale(1.05);
+    transition: transform 1s ease, box-shadow 0.3s ease;
+    background: #5ac7fa;
+    box-shadow: 0 4px 16px #6765e0;
 }
 
 .icon-content svg {
@@ -1801,7 +1771,7 @@ font-family: Georgia, 'Times New Roman', Times, serif;
     .clock:hover{
     box-shadow: 0 4px 16px #6765e0;
     transform: scale(1.05);
-    transition: transform 0.3s ease, box-shadow 1s ease
+      transition: transform 0.3s ease, box-shadow 1s ease;
     }
 
 .time {
