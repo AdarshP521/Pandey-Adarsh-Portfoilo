@@ -16,6 +16,15 @@ html {
     line-height: 1.6;
     padding: 0 1rem;
   }
+
+  body {
+font-weight: bold;
+  background-color: black;
+  color: #f7f7ff;
+  font-family: Arial, sans-serif;
+  padding: 40px;
+  margin: 0;
+}
   
 
   /* Navbar */
@@ -739,14 +748,58 @@ margin-top: -5rem;
     width: 15%;
 }
 
-body {
-font-weight: bold;
-  background-color: black;
-  color: #f7f7ff;
-  font-family: Arial, sans-serif;
-  padding: 40px;
-  margin: 0;
-}
+/* skill icon  */
+
+        .icon-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-top: 3rem;
+          margin-bottom: 5rem;
+            display: flex;
+            gap: 30px;
+            padding: 20px;
+            background: #ffffff0d;
+            padding: 1rem;
+            border-radius: 2rem;
+            border: 1px solid #ffffff21;
+            backdrop-filter: blur(10px);
+        }
+
+        .icon-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem 1rem;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: #ffffff08;
+            border-radius: 0.8rem;
+            border: 1px solid #ffffff21;
+            backdrop-filter: blur(10px);
+
+        }
+
+        .icon-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px #6765e0;
+    border-color: #6765e0;
+        }   
+        
+        .iconimg{
+           width: 3rem;
+            height: auto
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .label{
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 1.2rem;
+            color: #ffffff;
+        }
+
 
 /*.skills-container {
   display: grid;
@@ -909,11 +962,35 @@ font-weight: bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.t12{
-    font-size: 5rem;
+.t11:hover{
+    color: #6765e0;
+    cursor: pointer;
+} 
+
+/* my littel css */
+
+.t12 h2{
+  height:max-content;
+  width: auto;
+    font-size: 6rem;
     color: #6765e0;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+.t12 h2:hover{
+    color: #f7f7ff;
+    cursor: pointer;
+}
+
+.t12 h2::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 5px;
+    bottom: -0.001rem;
+    background-color: #6765e0;
+    transition: width 0.5s ease;
+  } 
 
 /* flipcard */
 
