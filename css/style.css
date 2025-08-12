@@ -750,21 +750,20 @@ margin-top: -5rem;
 
 /* skill icon  */
 
-        .icon-container {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          margin-top: 3rem;
-          margin-bottom: 5rem;
-            display: flex;
-            gap: 30px;
-            padding: 20px;
-            background: #ffffff0d;
-            padding: 1rem;
-            border-radius: 2rem;
-            border: 1px solid #ffffff21;
-            backdrop-filter: blur(10px);
-        }
+.icon-container {
+  width: 80rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  align-items: center;       
+  margin: 3rem auto 5rem auto; 
+  gap:1.5rem;
+  background: #ffffff0d;
+  padding: 1.5rem 3rem;  /* remove or decrese this when i add more skills */
+  border-radius: 2rem;
+  border: 1px solid #ffffff21;
+  backdrop-filter: blur(10px);
+}
 
         .icon-item {
             display: flex;
@@ -1202,7 +1201,7 @@ margin-top: -5rem;
    margin-top: 2.5rem;
   }
 
-  /* overlay z index */
+  /* overlay z index
 
   .projects1 {
   position: sticky;
