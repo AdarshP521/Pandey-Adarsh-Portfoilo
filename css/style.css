@@ -1702,17 +1702,18 @@ margin-top: 2rem;
 font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.email {
+.email a {
   width:fit-content;
   font-size: 1.5rem;
   font-weight: 600;
-  color: #f7f7ff;
+  color: #ffffff;
+  text-decoration: none;
   text-align: center;
   display: block;
   margin-top: 1.1rem;
   margin-left: 33.5rem;
   cursor: pointer;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 
