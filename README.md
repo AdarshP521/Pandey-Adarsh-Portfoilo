@@ -37,8 +37,8 @@ This portfolio showcases my projects, skills, and experience in web development/
 ## 📬 Contact  
 
 - **Email:** adarshpandeycoc521@gmail.com  
-- **LinkedIn:** [Your LinkedIn](https://www.linkedin.com/in/pandeyadarsh521/)  
-- **GitHub:** [Your GitHub](https://github.com/AdarshP521/Pandey-Adarsh-Portfoilo)  
+- **LinkedIn:** [Pandey Adarsh](https://www.linkedin.com/in/pandeyadarsh521/)  
+- **GitHub:** [AdarshP521](https://github.com/AdarshP521/Pandey-Adarsh-Portfoilo)  
 
 ---
 
