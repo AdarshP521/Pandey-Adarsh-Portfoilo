@@ -751,15 +751,15 @@ margin-top: -5rem;
 /* skill icon  */
 
 .icon-container {
-  width: 80rem;
+  width: 85rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center; 
   align-items: center;       
-  margin: 3rem auto 5rem auto; 
+  margin: 1.5rem auto 5rem auto; 
   gap:1.5rem;
   background: #ffffff0d;
-  padding: 1.5rem 3rem;  /* remove or decrese this when i add more skills */
+  padding: 1.5rem 1.5rem;  /* remove or decrese this when i add more skills */
   border-radius: 2rem;
   border: 1px solid #ffffff21;
   backdrop-filter: blur(10px);
