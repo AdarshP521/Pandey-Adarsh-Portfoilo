@@ -1387,7 +1387,9 @@ cursor: pointer;}
 .card5 { grid-area: card5; }
 .card6 { grid-area: card6; }
 
-
+.videosec2{
+  margin-top: 1.5rem;
+}
 
 .vidsec {
     padding: 20px;
@@ -1463,6 +1465,44 @@ cursor: pointer;}
 .video-btn:active {
     transform: translateY(0);
 }
+
+/* sih zone */
+
+.sih h2 {
+      text-align: center;
+      margin-top: 3.5rem ;
+    font-size: 3rem;
+    background: linear-gradient(90deg, #FF671F,#FF671F, #FFFFFF, #046A38, #046A38);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    display:flex;
+    justify-content: center;
+
+  }
+
+    .sih h2::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 5px;
+    bottom: -0.001rem;
+    background-color: #6765e0;
+    transition: width 0.5s ease;
+  }
+
+    .sih h2:hover::after {
+    width: 55%;
+}
+
+.sih img{
+  margin-top: 1rem;
+  width:8rem;
+  height:3rem;
+}
+
 
   
   /* creativity zone section */
