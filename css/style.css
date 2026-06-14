@@ -1288,6 +1288,12 @@ margin-top: -5rem;
     color: #f7f7ff;
   } */
 
+/* see all projects button */
+.projects-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
 
 /* designs gif section */
 
