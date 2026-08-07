@@ -1,0 +1,212 @@
+  body {
+  font-family: "Poppins", sans-serif;
+  background-color: #0f111a;
+  color: #f5f5f5;
+  line-height: 1.6;
+  margin: 0;
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+header h2 {
+  font-weight: 600;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #f7f7ff;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+header h2::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 5px;
+    bottom: -0.001rem;
+    background-color: #6765e0;
+    transition: width 0.5s ease;
+  }
+
+header h2:hover::after {
+    width: 25%;
+} 
+
+.project-grid {
+  max-width: 1200px; /* Adjust this to control the max width of your content */
+  margin: 0 auto; /* This will center the grid */
+}
+
+   .card {
+    display: flex; 
+    flex-direction: row; 
+    /* Make cards take up the full width */
+    flex: 1 1 100%;
+    max-width: 100%; 
+    box-sizing: border-box;
+    margin: 0;
+    margin-bottom: 1.5rem;
+    background: #ffffff0d;
+    backdrop-filter: blur(8px);
+    padding: 1.2rem;
+    border-radius: 1rem;
+    border: 1px solid #ffffff14;
+    box-shadow: 0 4px 8px #0000004d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding-left: 1.2rem;
+  }
+
+    .card h3{
+
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;  
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+  }
+
+  .card p {
+    margin-bottom: 1rem;
+     margin-top: -0.5rem;
+  }
+
+    .card img {
+    width: 45%; 
+    height: auto;
+    border-radius: 0.8rem;
+  }
+
+    .card video {
+    width: 100%; 
+    height: auto;
+    border-radius: 0.8rem;
+  } 
+  
+
+    .card:hover {
+    border: 1px solid #6765e0;
+    box-shadow: 0 10px 15px #6765e0;
+        transform: translateY(-6px);
+    border: 1px solid #6765e0;
+    box-shadow: 0 10px 15px #6765e0;
+  }
+
+  .card-body a {
+    align-self: flex-end;
+    margin-top: auto;
+  }
+
+  .custom-button {
+  background-color: #ffa300; /* Button background color */
+  color: #000000; /* Text color */
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 1rem;
+  cursor:pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+
+
+
+}
+
+.custom-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: #00fe9b;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.custom-button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.9;
+}
+
+.custom-button:hover {
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+  color: #1a1a2e;
+}
+
+/* Effect of waves under pressure */
+.custom-button:active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 0.6s ease-out;
+  z-index: -1;
+}
+
+@keyframes ripple {
+  to {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+  }
+}
+
+/* Animated text glow effect */
+.custom-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    #ffffff00 0%,
+    #ffffff 50%,
+    #ffffff00 100%
+  );
+  transform: skewX(-25deg);
+  transition: all 0.3s ease;
+}
+
+.custom-button:hover::after {
+  left: 100%;
+  transition: all 0.5s ease;
+}
+
+.projects-btn {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  header h1 {
+    font-size: 2.5rem;
+  }
+}

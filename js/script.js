@@ -233,3 +233,18 @@ function updateClock() {
 // Initialize clock
 updateClock();
 setInterval(updateClock, 1000);
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.project-link').forEach(link => {
+    link.addEventListener('click', async (e) => {
+      e.preventDefault(); // <-- Stops browser from opening a new 404 URL!
+
+      const url = link.getAttribute('href');
+      if (typeof loadContent === 'function') {
+        await loadContent(url);
+      } else {
+        console.warn('loadContent is not defined for .project-link:', url);
+      }
+    });
+  });
+});
