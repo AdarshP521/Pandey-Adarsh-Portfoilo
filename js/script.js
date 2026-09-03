@@ -1,6 +1,7 @@
 // Initialize AOS animations
 AOS.init({
-  duration: 5000,
+  duration: 900,
+  easing: 'ease-out',
   once: true,
 });
 
@@ -49,7 +50,9 @@ typeEffect();
 const cursorDot = document.querySelector('.cursor-dot');
 
 document.addEventListener('mousemove', (e) => {
-  cursorDot.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
+  if (cursorDot) {
+    cursorDot.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
+  }
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -103,20 +106,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// Show/hide back-to-top button only at the end of the page
-window.addEventListener('scroll', function() {
-  const btn = document.querySelector('.back-to-top');
-  // Check if user is at the bottom (with a small threshold for mobile)
-  if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 10)) {
-    btn.classList.add('show');
-  } else {
-    btn.classList.remove('show');
-  }
-});
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+function getScrollBehavior() {
+  return prefersReducedMotion.matches ? 'auto' : 'smooth';
+}
 
 // Smooth scroll to top
 function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: getScrollBehavior() });
 }
 
 
@@ -140,12 +138,12 @@ function updateScrollIndicator() {
   if (scrollIndicator) {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
+    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
     
     // Ensure the percentage doesn't exceed 100%
     const clampedPercent = Math.min(Math.max(scrollPercent, 0), 100);
     
-    scrollIndicator.style.setProperty('--scroll-width', clampedPercent + '%');
+    scrollIndicator.style.setProperty('--scroll-progress', clampedPercent / 100);
     
     // Add a class when scrolling to enable smooth transitions
     if (scrollTop > 0) {
@@ -156,40 +154,47 @@ function updateScrollIndicator() {
   }
 }
 
-// Initialize scroll indicator on page load
-document.addEventListener('DOMContentLoaded', function() {
-  updateScrollIndicator();
-});
-
-// Update scroll indicator on scroll with throttling for better performance
+// Keep scroll-driven UI updates in one animation frame to avoid layout work on
+// every native scroll event.
 let ticking = false;
-function requestTick() {
+function updateScrollUI() {
+  updateScrollIndicator();
+
+  const btn = document.querySelector('.back-to-top');
+  if (btn) {
+    const isAtBottom =
+      window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 10;
+    btn.classList.toggle('show', isAtBottom);
+  }
+
+  ticking = false;
+}
+
+function requestScrollUIUpdate() {
   if (!ticking) {
-    requestAnimationFrame(updateScrollIndicator);
+    requestAnimationFrame(updateScrollUI);
     ticking = true;
   }
 }
 
-window.addEventListener('scroll', function() {
-  ticking = false;
-  requestTick();
-});
+document.addEventListener('DOMContentLoaded', updateScrollUI);
+window.addEventListener('scroll', requestScrollUIUpdate, { passive: true });
 
 // Update on window resize
-window.addEventListener('resize', updateScrollIndicator);
+window.addEventListener('resize', requestScrollUIUpdate);
 
 
 // Smooth scroll for navigation
 function scrollToSection(selector) {
   const el = document.querySelector(selector);
   if (el) {
-    el.scrollIntoView({ behavior: 'smooth' });
+    el.scrollIntoView({ behavior: getScrollBehavior(), block: 'start' });
   }
 }
 
 document.getElementById('nav-home').addEventListener('click', function(e) {
   e.preventDefault();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: getScrollBehavior() });
 });
 document.getElementById('nav-about').addEventListener('click', function(e) {
   e.preventDefault();
@@ -205,7 +210,7 @@ document.getElementById('nav-projects').addEventListener('click', function(e) {
 });
 document.getElementById('nav-contact').addEventListener('click', function(e) {
   e.preventDefault();
-  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  window.scrollTo({ top: document.documentElement.scrollHeight, behavior: getScrollBehavior() });
 });
 // Resume link is direct download, no scroll needed
 
