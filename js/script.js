@@ -253,3 +253,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const certificateGrid = document.querySelector('.certificates-grid');
+  if (!certificateGrid) return;
+
+  const certificates = Array.from(certificateGrid.children);
+  certificates.forEach((certificate) => {
+    const duplicate = certificate.cloneNode(true);
+    duplicate.setAttribute('aria-hidden', 'true');
+    certificateGrid.appendChild(duplicate);
+  });
+});
