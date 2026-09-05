@@ -6,13 +6,12 @@ AOS.init({
 });
 
 const words = [
-  "GRAPHIC DESIGNER",
   "UI/UX DESIGNER",
-  "FRONT-END DEVELOPER",
-  "TECH VIDEO CREATOR",
-  "PRODUCT DESIGNER",
+  "SOFTWARE DEVELOPER",
+  "TECH CONTENT CREATOR",
+  "SAAS APP DEVELOPER",
+  "GRAPHIC DESIGNER",
   "VIDEO EDITOR",
-  "WEB DESIGNER",
   "CSE ENGINEER",
 ];
 const dynamicText = document.getElementById("dynamic-text");
@@ -106,15 +105,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-function getScrollBehavior() {
-  return prefersReducedMotion.matches ? 'auto' : 'smooth';
-}
-
-// Smooth scroll to top
 function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: getScrollBehavior() });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 
@@ -130,6 +122,89 @@ document.addEventListener('DOMContentLoaded', function() {
       this.style.transform = 'translateY(0) scale(1)';
     });
   });
+});
+
+// ===== EXPERIENCE TIMELINE =====
+document.addEventListener('DOMContentLoaded', function() {
+  const experienceSection = document.querySelector('.experience-section');
+  const timeline = document.querySelector('.timeline');
+  const timelineItems = timeline ? [...timeline.querySelectorAll('.timeline-item')] : [];
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (!experienceSection || !timeline || !timelineItems.length) {
+    return;
+  }
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  revealObserver.observe(experienceSection);
+  timelineItems.forEach(item => revealObserver.observe(item));
+
+  let targetProgress = 0;
+  let displayedProgress = 0;
+  let animationFrame = null;
+
+  function getTimelineProgress() {
+    const timelineRect = timeline.getBoundingClientRect();
+    const viewportAnchor = window.innerHeight * 0.55;
+    const progress = (viewportAnchor - timelineRect.top) / timelineRect.height;
+    return Math.min(Math.max(progress, 0), 1);
+  }
+
+  function updateCurrentItem() {
+    const viewportAnchor = window.innerHeight * 0.55;
+    timelineItems.forEach(item => {
+      const itemRect = item.getBoundingClientRect();
+      item.classList.toggle(
+        'is-current',
+        itemRect.top <= viewportAnchor && itemRect.bottom >= viewportAnchor
+      );
+    });
+  }
+
+  function animateTimeline() {
+    const easing = 0.16;
+    displayedProgress += (targetProgress - displayedProgress) * easing;
+    timeline.style.setProperty(
+      '--timeline-progress',
+      displayedProgress
+    );
+    updateCurrentItem();
+
+    if (Math.abs(targetProgress - displayedProgress) > 0.001) {
+      animationFrame = requestAnimationFrame(animateTimeline);
+    } else {
+      displayedProgress = targetProgress;
+      timeline.style.setProperty('--timeline-progress', displayedProgress);
+      animationFrame = null;
+    }
+  }
+
+  function updateTimelineProgress() {
+    targetProgress = getTimelineProgress();
+
+    if (prefersReducedMotion.matches) {
+      displayedProgress = targetProgress;
+      timeline.style.setProperty('--timeline-progress', displayedProgress);
+      updateCurrentItem();
+      return;
+    }
+
+    if (!animationFrame) {
+      animationFrame = requestAnimationFrame(animateTimeline);
+    }
+  }
+
+  updateTimelineProgress();
+  window.addEventListener('scroll', updateTimelineProgress, { passive: true });
+  window.addEventListener('resize', updateTimelineProgress);
 });
 
 // ===== SCROLL INDICATOR =====
@@ -180,6 +255,11 @@ function requestScrollUIUpdate() {
 document.addEventListener('DOMContentLoaded', updateScrollUI);
 window.addEventListener('scroll', requestScrollUIUpdate, { passive: true });
 
+const backToTopButton = document.querySelector('.back-to-top');
+if (backToTopButton) {
+  backToTopButton.addEventListener('click', scrollToTop);
+}
+
 // Update on window resize
 window.addEventListener('resize', requestScrollUIUpdate);
 
@@ -188,13 +268,13 @@ window.addEventListener('resize', requestScrollUIUpdate);
 function scrollToSection(selector) {
   const el = document.querySelector(selector);
   if (el) {
-    el.scrollIntoView({ behavior: getScrollBehavior(), block: 'start' });
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
 
 document.getElementById('nav-home').addEventListener('click', function(e) {
   e.preventDefault();
-  window.scrollTo({ top: 0, behavior: getScrollBehavior() });
+  scrollToTop();
 });
 document.getElementById('nav-about').addEventListener('click', function(e) {
   e.preventDefault();
@@ -210,7 +290,10 @@ document.getElementById('nav-projects').addEventListener('click', function(e) {
 });
 document.getElementById('nav-contact').addEventListener('click', function(e) {
   e.preventDefault();
-  window.scrollTo({ top: document.documentElement.scrollHeight, behavior: getScrollBehavior() });
+  window.scrollTo({
+    top: document.documentElement.scrollHeight,
+    behavior: 'smooth'
+  });
 });
 // Resume link is direct download, no scroll needed
 
