@@ -113,7 +113,7 @@ function scrollToTop() {
 // ===== CARD HOVER EFFECTS =====
 document.addEventListener('DOMContentLoaded', function() {
   // Card hover effects
-  document.querySelectorAll('.card').forEach(card => {
+  document.querySelectorAll('.projects .card, .projects1 .card').forEach(card => {
     card.addEventListener('mouseenter', function() {
       this.style.transform = 'translateY(-10px) scale(1.02)';
     });
@@ -124,88 +124,82 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// ===== EXPERIENCE TIMELINE =====
-document.addEventListener('DOMContentLoaded', function() {
-  const experienceSection = document.querySelector('.experience-section');
-  const timeline = document.querySelector('.timeline');
-  const timelineItems = timeline ? [...timeline.querySelectorAll('.timeline-item')] : [];
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+/* Timeline Tracer + Cards */
+const tlContainer = document.getElementById('tl-container');
+const glowLine = document.getElementById('glow-line');
+const tracerStar = document.getElementById('tracer-star');
+const tlItems = document.querySelectorAll('.timeline-item');
 
-  if (!experienceSection || !timeline || !timelineItems.length) {
-    return;
-  }
+let curY = window.innerHeight * 0.45;
+let targetY = 0;
+let currentY = 0;
 
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
+function calcTarget() {
+  if (!tlContainer) return;
+  const rect = tlContainer.getBoundingClientRect();
+  const top = window.scrollY + rect.top;
+  const lastItem = tlItems[tlItems.length - 1];
+  const lastMilestoneY = lastItem ? lastItem.offsetTop : tlContainer.offsetHeight;
+  targetY = Math.max(0, Math.min((window.scrollY + curY) - top, lastMilestoneY));
+}
+
+window.addEventListener('mousemove', event => {
+  curY = event.clientY;
+  calcTarget();
+});
+window.addEventListener('scroll', calcTarget, { passive: true });
+window.addEventListener('resize', calcTarget);
+
+calcTarget();
+currentY = targetY;
+
+function loopTracer() {
+  currentY += (targetY - currentY) * 0.12;
+
+  if (tracerStar && glowLine) {
+    tracerStar.style.top = `${currentY.toFixed(1)}px`;
+    glowLine.style.height = `${currentY.toFixed(1)}px`;
+
+    tlItems.forEach(item => {
+      const dot = item.querySelector('.milestone-dot');
+      if (!dot) return;
+
+      const distance = Math.abs(currentY - item.offsetTop);
+      if (distance < 40) {
+        dot.style.transform = 'scale(1.55)';
+        dot.style.boxShadow = '0 0 35px #fff, 0 0 55px #38bdf8, 0 0 75px #a855f7';
+      } else if (distance < 120) {
+        const factor = 1 - (distance - 40) / 80;
+        dot.style.transform = `scale(${(1 + 0.45 * factor).toFixed(3)})`;
+        dot.style.boxShadow = `0 0 ${Math.round(18 + 16 * factor)}px #fff, 0 0 ${Math.round(25 + 22 * factor)}px #38bdf8`;
+      } else {
+        dot.style.transform = '';
+        dot.style.boxShadow = '';
       }
     });
-  }, { threshold: 0.2 });
-
-  revealObserver.observe(experienceSection);
-  timelineItems.forEach(item => revealObserver.observe(item));
-
-  let targetProgress = 0;
-  let displayedProgress = 0;
-  let animationFrame = null;
-
-  function getTimelineProgress() {
-    const timelineRect = timeline.getBoundingClientRect();
-    const viewportAnchor = window.innerHeight * 0.55;
-    const progress = (viewportAnchor - timelineRect.top) / timelineRect.height;
-    return Math.min(Math.max(progress, 0), 1);
   }
 
-  function updateCurrentItem() {
-    const viewportAnchor = window.innerHeight * 0.55;
-    timelineItems.forEach(item => {
-      const itemRect = item.getBoundingClientRect();
-      item.classList.toggle(
-        'is-current',
-        itemRect.top <= viewportAnchor && itemRect.bottom >= viewportAnchor
-      );
-    });
-  }
+  requestAnimationFrame(loopTracer);
+}
 
-  function animateTimeline() {
-    const easing = 0.16;
-    displayedProgress += (targetProgress - displayedProgress) * easing;
-    timeline.style.setProperty(
-      '--timeline-progress',
-      displayedProgress
-    );
-    updateCurrentItem();
+loopTracer();
 
-    if (Math.abs(targetProgress - displayedProgress) > 0.001) {
-      animationFrame = requestAnimationFrame(animateTimeline);
-    } else {
-      displayedProgress = targetProgress;
-      timeline.style.setProperty('--timeline-progress', displayedProgress);
-      animationFrame = null;
-    }
-  }
-
-  function updateTimelineProgress() {
-    targetProgress = getTimelineProgress();
-
-    if (prefersReducedMotion.matches) {
-      displayedProgress = targetProgress;
-      timeline.style.setProperty('--timeline-progress', displayedProgress);
-      updateCurrentItem();
-      return;
-    }
-
-    if (!animationFrame) {
-      animationFrame = requestAnimationFrame(animateTimeline);
-    }
-  }
-
-  updateTimelineProgress();
-  window.addEventListener('scroll', updateTimelineProgress, { passive: true });
-  window.addEventListener('resize', updateTimelineProgress);
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mousemove', event => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--mx', `${event.clientX - rect.left}px`);
+    card.style.setProperty('--my', `${event.clientY - rect.top}px`);
+  });
 });
+
+const revealObserver = new IntersectionObserver(
+  entries => entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  }),
+  { threshold: 0.15 }
+);
+
+tlItems.forEach(item => revealObserver.observe(item));
 
 // ===== SCROLL INDICATOR =====
 function updateScrollIndicator() {
