@@ -348,3 +348,112 @@ document.addEventListener('DOMContentLoaded', function() {
     certificateGrid.appendChild(duplicate);
   });
 });
+
+
+// animnin bg
+
+const canvas = document.getElementById('galaxy-canvas');
+const ctx    = canvas.getContext('2d');
+let W = canvas.width  = window.innerWidth;
+let H = canvas.height = window.innerHeight;
+
+let mouseX = W / 2, mouseY = H / 2;
+let mTX    = W / 2, mTY    = H / 2;
+
+window.addEventListener('mousemove', e => { mTX = e.clientX; mTY = e.clientY; });
+window.addEventListener('resize', () => {
+  W = canvas.width  = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+  initStars();
+});
+
+/* ── Stars ── */
+const STAR_COUNT = 300;
+let stars = [];
+
+class Star {
+  constructor() { this.reset(); }
+  reset() {
+    this.x     = Math.random() * W;
+    this.y     = Math.random() * H;
+    this.z     = Math.random() * 1.5 + 0.2;
+    this.r     = Math.random() * 1.6 + 0.4;
+    this.base  = Math.random() * 0.7 + 0.2;
+    this.a     = this.base;
+    this.speed = Math.random() * 0.02 + 0.005;
+    this.phase = Math.random() * Math.PI * 2;
+    const c = ['255,255,255','200,220,255','180,200,255','230,210,255','160,240,255'];
+    this.col = c[Math.floor(Math.random() * c.length)];
+  }
+  update() {
+    this.phase += this.speed;
+    this.a = Math.min(1, Math.max(0.1, this.base + Math.sin(this.phase) * 0.25));
+    this.x = (this.x + (mouseX - W / 2) * 0.0003 * this.z + W) % W;
+    this.y = (this.y + (mouseY - H / 2) * 0.0003 * this.z + H) % H;
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r * this.z, 0, Math.PI * 2);
+    ctx.fillStyle   = `rgba(${this.col},${this.a})`;
+    ctx.shadowBlur  = this.r > 1.2 ? 8 : 0;
+    ctx.shadowColor = `rgba(${this.col},.8)`;
+    ctx.fill();
+    ctx.shadowBlur = 0;
+  }
+}
+
+/* ── Shooting Stars ── */
+class Meteor {
+  constructor() { this.reset(); }
+  reset() {
+    this.x    = Math.random() * W * 1.2;
+    this.y    = Math.random() * H * 0.4;
+    this.len  = Math.random() * 80 + 50;
+    this.spd  = Math.random() * 8 + 5;
+    this.ang  = Math.PI / 4 + (Math.random() * 0.2 - 0.1);
+    this.op   = 1;
+    this.on   = false;
+    this.wait = Math.random() * 300 + 120;
+  }
+  update() {
+    if (!this.on) { if (--this.wait <= 0) this.on = true; return; }
+    this.x  -= Math.cos(this.ang) * this.spd;
+    this.y  += Math.sin(this.ang) * this.spd;
+    this.op -= 0.015;
+    if (this.op <= 0 || this.x < -100 || this.y > H + 100) this.reset();
+  }
+  draw() {
+    if (!this.on || this.op <= 0) return;
+    const tx = this.x + Math.cos(this.ang) * this.len;
+    const ty = this.y - Math.sin(this.ang) * this.len;
+    const g  = ctx.createLinearGradient(this.x, this.y, tx, ty);
+    g.addColorStop(0,   `rgba(255,255,255,${this.op})`);
+    g.addColorStop(0.3, `rgba(168,85,247,${this.op * 0.6})`);
+    g.addColorStop(1,   'transparent');
+    ctx.beginPath();
+    ctx.moveTo(this.x, this.y);
+    ctx.lineTo(tx, ty);
+    ctx.strokeStyle = g;
+    ctx.lineWidth   = 1.6;
+    ctx.lineCap     = 'round';
+    ctx.stroke();
+  }
+}
+
+function initStars() {
+  stars = [];
+  for (let i = 0; i < STAR_COUNT; i++) stars.push(new Star());
+}
+initStars();
+
+const meteors = [new Meteor(), new Meteor()];
+
+function loop() {
+  mouseX += (mTX - mouseX) * 0.05;
+  mouseY += (mTY - mouseY) * 0.05;
+  ctx.clearRect(0, 0, W, H);
+  stars.forEach(s  => { s.update(); s.draw(); });
+  meteors.forEach(m => { m.update(); m.draw(); });
+  requestAnimationFrame(loop);
+}
+loop();

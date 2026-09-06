@@ -331,8 +331,7 @@ body {
   font-size: 0.95rem;
   font-weight: 500;
   border: 1px solid #919090;
-  font-family: cursive;
-  box-shadow: 0 4px 3px #00a6ff, 0 0 5px #ff0000;
+    box-shadow: 0 4px 3px #00a6ff, 0 0 5px #ff0000;
   transition: box-shadow 0.3s, transform 0.3s;
 }
 
@@ -429,9 +428,6 @@ body {
 
 /* ===== EXPERIENCE & CERTIFICATES SECTION ===== */
 
-.experience-certificates {
-  background: #000000;
-}
 
 .exp-cert-container {
   display: grid;
@@ -628,21 +624,12 @@ body {
 /* Certificates Section */
 .certificates-section {
   font-size: 2rem;
-  color: #ffffff;
-  background: #ffffff0d;
   padding: 1rem;
   border-radius: 2rem;
-  border: 1px solid #919090;
-  backdrop-filter: blur(10px);
+  border: 2px solid #919090;
   text-align: center;
   font-family: Georgia, 'Times New Roman', Times, serif;
   overflow: hidden;
-}
-
-.certificates-marquee {
-  overflow: hidden;
-  margin-top: 1rem;
-  width: 100%;
 }
 
 .certificates-grid {
@@ -768,11 +755,10 @@ body {
   align-items: center;
   margin: 1.5rem auto 5rem auto;
   gap: 1.2rem;
-  background: #ffffff0d;
   padding: 1.5rem 1.5rem;
   border-radius: 2rem;
   border: 1px solid #919090;
-  backdrop-filter: blur(10px);
+
 }
 
 .icon-item {
@@ -1778,4 +1764,50 @@ p1 {
 
 .scroll-indicator.scrolling {
   opacity: 1;
+}
+
+
+
+
+/* bg animination */
+
+#galaxy-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.nebula {
+  position: fixed;
+  pointer-events: none;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.35;
+  animation: nebulaPulse 12s ease-in-out infinite alternate;
+}
+.nebula-1 {
+  top: 10%; left: 15%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(99,102,241,.45) 0%, rgba(168,85,247,.15) 60%, transparent 80%);
+}
+.nebula-2 {
+  bottom: 15%; right: 10%;
+  width: 650px; height: 650px;
+  background: radial-gradient(circle, rgba(56,189,248,.35) 0%, rgba(129,140,248,.15) 60%, transparent 80%);
+  animation-delay: -6s;
+}
+.nebula-3 {
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(147,51,234,.2) 0%, rgba(59,130,246,.08) 60%, transparent 85%);
+  animation-duration: 18s;
+}
+
+@keyframes nebulaPulse {
+  0%   { transform: scale(.9) translate(0, 0);           opacity: .25; }
+  100% { transform: scale(1.15) translate(30px, -20px);  opacity: .45; }
 }
