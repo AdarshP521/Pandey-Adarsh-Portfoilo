@@ -32,6 +32,8 @@ This portfolio showcases my projects, skills, and experience in web development/
 
 🔗 [Click Here to View Portfolio](https://pandeyadarshyt.netlify.app/)  
 
+Another link: [Click Here to View Portfolio](https://adarshp521.github.io/Pandey-Adarsh-Portfoilo/)
+
 ---
 
 ## 📬 Contact  
