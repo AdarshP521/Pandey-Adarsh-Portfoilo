@@ -130,7 +130,7 @@ const glowLine = document.getElementById('glow-line');
 const tracerStar = document.getElementById('tracer-star');
 const tlItems = document.querySelectorAll('.timeline-item');
 
-let curY = window.innerHeight * 0.45;
+let curY = window.innerHeight / 2;
 let targetY = 0;
 let currentY = 0;
 
@@ -143,12 +143,11 @@ function calcTarget() {
   targetY = Math.max(0, Math.min((window.scrollY + curY) - top, lastMilestoneY));
 }
 
-window.addEventListener('mousemove', event => {
-  curY = event.clientY;
+window.addEventListener('scroll', calcTarget, { passive: true });
+window.addEventListener('resize', () => {
+  curY = window.innerHeight / 2;
   calcTarget();
 });
-window.addEventListener('scroll', calcTarget, { passive: true });
-window.addEventListener('resize', calcTarget);
 
 calcTarget();
 currentY = targetY;
@@ -362,7 +361,7 @@ window.addEventListener('resize', () => {
 });
 
 /* ── Stars ── */
-const STAR_COUNT = 300;
+const STAR_COUNT = 521;
 let stars = [];
 
 class Star {
