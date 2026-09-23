@@ -450,3 +450,15 @@ function loop() {
   requestAnimationFrame(loop);
 }
 loop();
+
+
+
+// mobile hide
+
+if (window.innerWidth <= 768) {
+  // Target a card inside a specific container using CSS hierarchy
+  const specificCard = document.querySelector('.my-container .card-2');
+  if (specificCard) {
+    specificCard.remove();
+  }
+}
