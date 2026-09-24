@@ -46,15 +46,17 @@ Another link: [Click Here to View Portfolio](https://adarshp521.github.io/Pandey
 
 ⭐ Don’t forget to star the repo if you like my portfolio!
 
-For the developers
+
+#For the developers
+
   background: #ffffff08;
   border: 2px solid #919090;
   backdrop-filter: blur(3px);
   box-shadow: 0 3px 2px #00a6ff, 0 0 5px #ff0000;
 
-  after hover
-  
- transform: translateY(-5px);
+#After hover
+
+  transform: translateY(-5px);
   box-shadow: 3px 1px 10px #00a6ff, -0.5px -2px 5px #ff0000;
   border: 1px solid #919090;
 
