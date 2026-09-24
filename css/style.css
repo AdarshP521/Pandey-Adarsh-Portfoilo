@@ -25,7 +25,9 @@ body {
   font-weight: bold;
   background-color: #000000;
   color: #ffffff;
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
+    font-family: "Courier New", Courier, monospace;
+
   padding-top: 40px;
   padding-bottom: 40px;
   padding-left: 100px;
@@ -46,7 +48,8 @@ body {
   justify-content: space-around;
   justify-self: center;
   align-items: baseline;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Courier New", Courier, monospace;
+
   overflow: hidden;
   border-radius: 10rem;
   padding-top: 0.5%;
@@ -73,19 +76,38 @@ body {
 }
 
 .navbar .nav-links a {
+  position: relative;
+  display: inline-block;
   text-decoration: none;
   color: #ffffff;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.5s ease;
+}
+
+.navbar .nav-links a::after {
+  content: "";
+  position: absolute;
+  right: 50%;
+  bottom: 0.1rem;
+  left: 50%;
+  height: 1px;
+  border-radius: 999px;
+  background-color: #5ac8fa;
+  transition: right 0.3s ease, left 0.3s ease;
 }
 
 .navbar .nav-links a:hover {
   color: #5ac8fa;
-  text-decoration: underline;
+}
+
+.navbar .nav-links a:hover::after,
+.navbar .nav-links a:focus-visible::after {
+  right: 0;
+  left: 0;
 }
 
 
-.hero{
+.hero {
   padding-top: 5rem;
   display: flex;
   flex-direction: column;
@@ -93,7 +115,7 @@ body {
   padding-right: 100px; */
 }
 
-.intro{
+.intro {
   display: flex;
   width: min(100%, 72rem);
   margin-inline: auto;
@@ -110,15 +132,15 @@ body {
   font-weight: 700;
 }
 
-.maintxt{
+.maintxt {
   flex: 1 1 0;
   min-width: 0;
-  align-items: start;  
+  align-items: start;
 }
 
 .cf {
   position: relative;
-  min-height: 100px; 
+  min-height: 100px;
   margin-left: 17rem;
 }
 
@@ -128,7 +150,7 @@ body {
   top: 0;
   left: 0;
   max-width: 100%;
-  height: auto; 
+  height: auto;
 
 }
 
@@ -160,8 +182,10 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient-animation 4s infinite;
-  font-family: serif;
+    font-family: "Courier New", Courier, monospace;
+
 }
+
 @keyframes gradient-animation {
   0% {
     background-position: 0% 50%;
@@ -176,10 +200,10 @@ body {
   }
 }
 
-/* From Uiverse.io by jeremyssocial */ 
+/* From Uiverse.io by jeremyssocial */
 
 .terminal-loader {
-  color:#ffffff;
+  color: #ffffff;
   font-family: "Courier New", Courier, monospace;
   font-size: 1em;
   padding: 0.5em 0.5em;
@@ -261,6 +285,7 @@ body {
   cursor: pointer;
   transition: all 0.3s;
 }
+
 .svgContainer {
   width: 100%;
   height: 100%;
@@ -274,6 +299,7 @@ body {
   transition: all 0.3s;
   border: 1px solid rgba(156, 156, 156, 0.466);
 }
+
 .BG {
   position: absolute;
   content: "";
@@ -285,15 +311,18 @@ body {
   pointer-events: none;
   transition: all 0.3s;
 }
+
 .Btn:hover .BG {
   transform: rotate(35deg);
   transform-origin: bottom;
 }
+
 .Btn:hover .svgContainer {
   border: 1px solid rgba(255, 110, 110, 0.466);
   background-color: rgba(219, 219, 219, 0.466);
   backdrop-filter: blur(4px);
 }
+
 /* linked button */
 .LinkedinBtn {
   margin-left: 73rem;
@@ -310,6 +339,7 @@ body {
   cursor: pointer;
   transition: all 0.3s;
 }
+
 .LinkedinBtn .svgContainer {
   width: 100%;
   height: 100%;
@@ -323,6 +353,7 @@ body {
   transition: all 0.3s;
   border: 1px solid rgba(156, 156, 156, 0.466);
 }
+
 .LinkedinBtn .BG {
   position: absolute;
   content: "";
@@ -334,13 +365,16 @@ body {
   pointer-events: none;
   transition: all 0.3s;
 }
+
 .LinkedinBtn:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 .LinkedinBtn:hover .BG {
   transform: rotate(35deg);
   transform-origin: bottom;
 }
+
 .LinkedinBtn:hover .svgContainer {
   background-color: rgba(156, 156, 156, 0.466);
 }
@@ -368,6 +402,8 @@ body {
 
 
 .tags {
+    font-family: "Courier New", Courier, monospace;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -396,6 +432,28 @@ body {
   box-shadow: 3px 1px 10px #00a6ff, -0.5px -2px 5px #ff0000;
   border: 1px solid #919090;
   cursor: pointer;
+}
+
+.edu {
+    font-family: "Courier New", Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-self: center;
+  align-items:center;
+  text-align: center;
+  color: #ffffff;
+  font-size: .85rem;
+  font-weight: 500;
+  max-width: fit-content;
+  letter-spacing: .1em;
+  padding: 0.5em 2em;
+  border-radius: 9999px;
+  margin-top: 2rem;
+  background: #ffffff08;
+  border: 2px solid #919090;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 3px 2px #00a6ff, 0 0 5px #ff0000;
 }
 
 /* about me */
@@ -442,12 +500,12 @@ body {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   color: #ffffff;
-  font-family: 'Times New Roman', Times, serif;
+    font-family: "Courier New", Courier, monospace;
   line-height: normal;
   text-align: left;
   word-spacing: 0.1rem;
   letter-spacing: 0.1rem;
-  line-height: 2.5rem;
+  line-height: 1.8rem;
 }
 
 .aboutme p:hover {
@@ -990,7 +1048,8 @@ body {
 }
 
 .label {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-family: "Courier New", Courier, monospace;
+
   font-size: 1.2rem;
   color: #ffffff;
 }
@@ -1005,7 +1064,7 @@ body {
 
 .t11 {
   color: #ffffff;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .t11:hover {
@@ -1045,11 +1104,11 @@ body {
   width: 190px;
   height: 254px;
   perspective: 1000px;
-  font-family: sans-serif;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .title {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: "Courier New", Courier, monospace;
   font-size: 1.5em;
   font-weight: 900;
   text-align: center;
@@ -1180,7 +1239,7 @@ body {
   margin-top: 1rem;
   margin-bottom: 0.5rem;
   font-size: 2rem;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: "Courier New", Courier, monospace;
   color: #00a6ff;
 }
 
@@ -1249,12 +1308,6 @@ body {
   width: 8rem;
   height: 3rem;
 }
-
-/* sih card hover */
-
-
-
-
 
 .projects1 {
   display: flex;
@@ -1382,16 +1435,16 @@ body {
   padding-top: 1.5%;
   padding-left: 2.5%;
   font-size: 1.1rem;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .quote34 {
   display: flex;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .quote3 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: "Courier New", Courier, monospace;
   width: 50%;
   padding-top: 1.5%;
   padding-left: 10%;
@@ -1406,7 +1459,7 @@ body {
 
 .quote4 {
   width: 50%;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: "Courier New", Courier, monospace;
   font-size: larger;
   padding-top: 3%;
   margin-left: 10%;
@@ -1551,7 +1604,7 @@ body {
 
 
 .location {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Courier New", Courier, monospace;
   font-size: 2rem;
   color: #ffffff;
   text-align: center;
@@ -1696,9 +1749,9 @@ p1 {
 /* all social links button css */
 .button11 {
   text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Courier New", Courier, monospace;
   margin-top: 2rem;
-  width: 10em;
+  width: 12em;
   position: relative;
   height: 2em;
   outline: none;
@@ -1761,14 +1814,14 @@ p1 {
   background-position: 0;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 5s infinite linear;
+  animation: shine 7s infinite linear;
   animation-fill-mode: forwards;
   -webkit-text-size-adjust: none;
   font-weight: 600;
   font-size: 16px;
   text-decoration: none;
   white-space: nowrap;
-  font-family: "Poppins", sans-serif;
+  font-family: "Courier New", Courier, monospace;
   text-align: center;
 }
 
