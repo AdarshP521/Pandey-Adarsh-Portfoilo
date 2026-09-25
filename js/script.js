@@ -6,13 +6,13 @@ AOS.init({
 });
 
 const words = [
-  "UI/UX DESIGNER",
+  "UX DESIGNER",
   "SOFTWARE DEVELOPER",
   "TECH CONTENT CREATOR",
   "SAAS APP DEVELOPER",
   "GRAPHIC DESIGNER",
-  "VIDEO EDITOR",
   "CSE ENGINEER",
+    "OPEN SOURCE CONTRIBUTER",
 ];
 const dynamicText = document.getElementById("dynamic-text");
 
