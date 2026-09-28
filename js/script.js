@@ -361,7 +361,7 @@ window.addEventListener('resize', () => {
 });
 
 /* ── Stars ── */
-const STAR_COUNT = 521;
+const STAR_COUNT = 21;
 let stars = [];
 
 class Star {
@@ -455,10 +455,10 @@ loop();
 
 // mobile hide
 
-if (window.innerWidth <= 768) {
-  // Target a card inside a specific container using CSS hierarchy
-  const specificCard = document.querySelector('.my-container .card-2');
-  if (specificCard) {
-    specificCard.remove();
-  }
-}
+// if (window.innerWidth <= 768) {
+//   // Target a card inside a specific container using CSS hierarchy
+//   const specificCard = document.querySelector('.my-container .card-2');
+//   if (specificCard) {
+//     specificCard.remove();
+//   }
+// }
