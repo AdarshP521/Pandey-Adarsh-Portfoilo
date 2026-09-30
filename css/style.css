@@ -466,7 +466,7 @@ body {
 
 .Aboutme h2 {
   font-size: 3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
   text-shadow: 1px 1px 5px #00a6ff, -0.5px -2px 5px #ff0000;
   text-align: center;
   margin-top: 4rem;
@@ -556,7 +556,7 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1.5rem 8rem;
+  padding: 2rem 1.5rem 0.5rem;
   position: relative;
 }
 
@@ -1116,7 +1116,9 @@ body {
 /* flipcard */
 
 .flipcard {
-  margin-top: 5rem;
+  margin-top: 3rem;
+    margin-bottom: 3rem;
+
   display: flex;
   justify-content: space-evenly;
 }
@@ -1437,6 +1439,8 @@ body {
   grid-column: 1 / -1;
   width: 100%;
   margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+
 }
 
 /* designs gif section */
