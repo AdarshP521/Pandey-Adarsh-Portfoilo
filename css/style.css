@@ -96,11 +96,13 @@ body {
   transition: right 0.3s ease, left 0.3s ease;
 }
 
-.navbar .nav-links a:hover {
+.navbar .nav-links a:hover,
+.navbar .nav-links a.active {
   color: #5ac8fa;
 }
 
 .navbar .nav-links a:hover::after,
+.navbar .nav-links a.active::after,
 .navbar .nav-links a:focus-visible::after {
   right: 0;
   left: 0;
@@ -1012,7 +1014,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1.2rem;
-  padding: 1.5rem 1.5rem;
+  padding: 1.5rem 4.9rem;
   border-radius: 2rem;
 
 }
@@ -1469,6 +1471,7 @@ body {
 }
 
 .quote3 {
+    font-size: 1rem;
   font-family: "Courier New", Courier, monospace;
   width: 50%;
   padding-top: 1.5%;
@@ -1483,11 +1486,11 @@ body {
 }
 
 .quote4 {
-  width: 50%;
+  width: 40%;
   font-family: "Courier New", Courier, monospace;
-  font-size: larger;
-  padding-top: 3%;
-  margin-left: 10%;
+  font-size: 1.2rem;
+  padding-top: 1.5rem;
+  margin-left: 7%;
   color: #ffffff;
 }
 

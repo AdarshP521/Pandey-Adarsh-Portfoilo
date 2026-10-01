@@ -265,6 +265,53 @@ function scrollToSection(selector) {
   }
 }
 
+const navSections = [
+  { link: document.getElementById('nav-home'), selector: '.hero' },
+  { link: document.getElementById('nav-about'), selector: '.Aboutme' },
+  { link: document.getElementById('nav-skills'), selector: '.Skill' },
+  { link: document.getElementById('nav-projects'), selector: '.featured' },
+  { link: document.getElementById('nav-contact'), selector: '.contact' },
+].map(section => ({ ...section, element: document.querySelector(section.selector) }))
+  .filter(section => section.link && section.element);
+
+function updateActiveNavLink() {
+  const activationPoint = window.scrollY + (document.querySelector('.navbar')?.offsetHeight || 0) + 24;
+  let activeSection = navSections[0];
+
+  navSections.forEach(section => {
+    if (section.element.getBoundingClientRect().top + window.scrollY <= activationPoint) {
+      activeSection = section;
+    }
+  });
+
+  if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 10) {
+    activeSection = navSections[navSections.length - 1];
+  }
+
+  navSections.forEach(section => {
+    const isActive = section === activeSection;
+    section.link.classList.toggle('active', isActive);
+    if (isActive) {
+      section.link.setAttribute('aria-current', 'location');
+    } else {
+      section.link.removeAttribute('aria-current');
+    }
+  });
+}
+
+let activeNavUpdatePending = false;
+window.addEventListener('scroll', () => {
+  if (!activeNavUpdatePending) {
+    window.requestAnimationFrame(() => {
+      updateActiveNavLink();
+      activeNavUpdatePending = false;
+    });
+    activeNavUpdatePending = true;
+  }
+}, { passive: true });
+window.addEventListener('resize', updateActiveNavLink);
+updateActiveNavLink();
+
 document.getElementById('nav-home').addEventListener('click', function(e) {
   e.preventDefault();
   scrollToTop();
@@ -361,7 +408,7 @@ window.addEventListener('resize', () => {
 });
 
 /* ── Stars ── */
-const STAR_COUNT = 21;
+const STAR_COUNT = 521;
 let stars = [];
 
 class Star {
