@@ -46,6 +46,23 @@ function typeEffect() {
 
 typeEffect();
 
+const avatar = document.querySelector('.avatar');
+if (avatar && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  avatar.addEventListener('pointermove', (event) => {
+    const bounds = avatar.getBoundingClientRect();
+    const relativeX = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const relativeY = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+    avatar.style.setProperty('--avatar-rotate-x', `${-relativeY * 20}deg`);
+    avatar.style.setProperty('--avatar-rotate-y', `${relativeX * 30}deg`);
+  });
+
+  avatar.addEventListener('pointerleave', () => {
+    avatar.style.setProperty('--avatar-rotate-x', '0deg');
+    avatar.style.setProperty('--avatar-rotate-y', '0deg');
+  });
+}
+
 const cursorDot = document.querySelector('.cursor-dot');
 
 document.addEventListener('mousemove', (e) => {
