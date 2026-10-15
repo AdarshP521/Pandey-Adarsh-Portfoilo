@@ -5,57 +5,6 @@ AOS.init({
   once: true,
 });
 
-const words = [
-  "UX DESIGNER",
-  "SOFTWARE DEVELOPER",
-  "TECH CONTENT CREATOR",
-  "SAAS APP DEVELOPER",
-  "GRAPHIC DESIGNER",
-  "CSE ENGINEER",
-    "OPEN SOURCE CONTRIBUTER",
-];
-const dynamicText = document.getElementById("dynamic-text");
-
-let index = 0;
-let charIndex = 0;
-let isDeleting = false;
-
-function typeEffect() {
-  const currentWord = words[index];
-  if (isDeleting) {
-    dynamicText.textContent = currentWord.substring(0, charIndex);
-    charIndex--;
-  } else {
-    dynamicText.textContent = currentWord.substring(0, charIndex + 1);
-    charIndex++;
-  }
-
-  if (!isDeleting && charIndex === currentWord.length) {
-    // Pause before deleting
-    isDeleting = true;
-    setTimeout(typeEffect, 1000); // Back delay: 1000ms
-    return;
-  } else if (isDeleting && charIndex === 0) {
-    // Move to the next word
-    isDeleting = false;
-    index = (index + 1) % words.length;
-  }
-
-  setTimeout(typeEffect, isDeleting ? 80 : 100); // Back speed: 80ms, Type speed: 100ms
-}
-
-if (dynamicText) {
-  typeEffect();
-}
-
-const cursorDot = document.querySelector('.cursor-dot');
-
-document.addEventListener('mousemove', (e) => {
-  if (cursorDot) {
-    cursorDot.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
-  }
-});
-
 const avatar = document.querySelector('.avatar');
 if (avatar) {
   const resetAvatarTilt = () => {
@@ -72,82 +21,16 @@ if (avatar) {
     const horizontalPosition = (event.clientX - bounds.left) / bounds.width;
     const verticalPosition = (event.clientY - bounds.top) / bounds.height;
 
-    avatar.style.setProperty('--avatar-rotate-x', `${(0.5 - verticalPosition) * 12}deg`);
-    avatar.style.setProperty('--avatar-rotate-y', `${(horizontalPosition - 0.5) * 12}deg`);
+    avatar.style.setProperty('--avatar-rotate-x', `${(0.5 - verticalPosition) * 15}deg`);
+    avatar.style.setProperty('--avatar-rotate-y', `${(horizontalPosition - 0.5) * 35}deg`);
   });
 
   avatar.addEventListener('pointerleave', resetAvatarTilt);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Animate progress bars
-        const progressBars = entry.target.querySelectorAll('.progress-fill');
-        progressBars.forEach(bar => {
-          bar.classList.remove('animate');
-          void bar.offsetWidth;
-          bar.classList.add('animate');
-        });
-
-        // Animate numbers
-        const numbers = entry.target.querySelectorAll('.skill-header span:last-child');
-        numbers.forEach(number => {
-          number.classList.remove('animate-number');
-          void number.offsetWidth;
-          number.classList.add('animate-number');
-          
-          // Animate the number counting up
-          const targetValue = parseInt(number.textContent);
-          let startValue = 0;
-          const duration = 2000;
-          const increment = targetValue / (duration / 16);
-          
-          const animateCount = () => {
-            startValue += increment;
-            if (startValue < targetValue) {
-              number.textContent = Math.round(startValue) + '%';
-              requestAnimationFrame(animateCount);
-            } else {
-              number.textContent = targetValue + '%';
-            }
-          };
-          
-          animateCount();
-        });
-      }
-    });
-  }, {
-    threshold: 0.2
-  });
-
-  // Observe the skills container
-  const skillsContainer = document.querySelector('.skills-container');
-  if (skillsContainer) {
-    observer.observe(skillsContainer);
-  }
-});
-
-
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
-
-// ===== CARD HOVER EFFECTS =====
-document.addEventListener('DOMContentLoaded', function() {
-  // Card hover effects
-  document.querySelectorAll('.projects .card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-      this.style.transform = 'translateY(-10px) scale(1.02)';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-      this.style.transform = 'translateY(0) scale(1)';
-    });
-  });
-});
 
 /* Timeline Tracer + Cards */
 const tlContainer = document.getElementById('tl-container');
