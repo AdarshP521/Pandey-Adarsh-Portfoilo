@@ -527,7 +527,7 @@ body {
   margin-top: 3.5rem;
   font-size: 3rem;
   color: #ffffff;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+
   position: relative;
   display: flex;
   justify-content: center;
@@ -560,7 +560,7 @@ body {
   margin: 1.5rem;
 }
 
-.skill-category h3 {
+.skill-category h3.skill-category h3 {
   margin: 0 0 0.5rem;
   color: #ffffff;
   font-size: 1.5rem;
@@ -603,8 +603,6 @@ body {
 }
 
 .label {
-  font-family: "Courier New", Courier, monospace;
-
   font-size: 1.2rem;
   color: #ffffff;
 }
@@ -1064,7 +1062,6 @@ body {
 .skill-category h3 {
   margin: 0 0 0.5rem;
   color: #ffffff;
-  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1.5rem;
   text-align: center;
   text-shadow: 1px 1px 5px #00a6ff, -0.5px -2px 5px #ff0000;
