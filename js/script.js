@@ -46,23 +46,6 @@ function typeEffect() {
 
 typeEffect();
 
-const avatar = document.querySelector('.avatar');
-if (avatar && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  avatar.addEventListener('pointermove', (event) => {
-    const bounds = avatar.getBoundingClientRect();
-    const relativeX = (event.clientX - bounds.left) / bounds.width - 0.5;
-    const relativeY = (event.clientY - bounds.top) / bounds.height - 0.5;
-
-    avatar.style.setProperty('--avatar-rotate-x', `${-relativeY * 20}deg`);
-    avatar.style.setProperty('--avatar-rotate-y', `${relativeX * 30}deg`);
-  });
-
-  avatar.addEventListener('pointerleave', () => {
-    avatar.style.setProperty('--avatar-rotate-x', '0deg');
-    avatar.style.setProperty('--avatar-rotate-y', '0deg');
-  });
-}
-
 const cursorDot = document.querySelector('.cursor-dot');
 
 document.addEventListener('mousemove', (e) => {
@@ -130,7 +113,7 @@ function scrollToTop() {
 // ===== CARD HOVER EFFECTS =====
 document.addEventListener('DOMContentLoaded', function() {
   // Card hover effects
-  document.querySelectorAll('.projects .card, .projects1 .card').forEach(card => {
+  document.querySelectorAll('.projects .card').forEach(card => {
     card.addEventListener('mouseenter', function() {
       this.style.transform = 'translateY(-10px) scale(1.02)';
     });
@@ -274,24 +257,19 @@ if (backToTopButton) {
 window.addEventListener('resize', requestScrollUIUpdate);
 
 
-// Smooth scroll for navigation
-function scrollToSection(selector) {
-  const el = document.querySelector(selector);
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-}
-
 const navSections = [
-  { link: document.getElementById('nav-home'), selector: '.hero' },
-  { link: document.getElementById('nav-about'), selector: '.Aboutme' },
-  { link: document.getElementById('nav-skills'), selector: '.Skill' },
-  { link: document.getElementById('nav-projects'), selector: '.featured' },
-  { link: document.getElementById('nav-contact'), selector: '.contact' },
+  { link: document.getElementById('nav-home'), selector: '#home' },
+  { link: document.getElementById('nav-about'), selector: '#about' },
+  { link: document.getElementById('nav-skills'), selector: '#skills' },
+  { link: document.getElementById('nav-projects'), selector: '#projects' },
+  { link: document.getElementById('nav-credentials'), selector: '#credentials' },
+  { link: document.getElementById('nav-contact'), selector: '#contact' },
 ].map(section => ({ ...section, element: document.querySelector(section.selector) }))
   .filter(section => section.link && section.element);
 
 function updateActiveNavLink() {
+  if (!navSections.length) return;
+
   const activationPoint = window.scrollY + (document.querySelector('.navbar')?.offsetHeight || 0) + 24;
   let activeSection = navSections[0];
 
@@ -329,32 +307,6 @@ window.addEventListener('scroll', () => {
 window.addEventListener('resize', updateActiveNavLink);
 updateActiveNavLink();
 
-document.getElementById('nav-home').addEventListener('click', function(e) {
-  e.preventDefault();
-  scrollToTop();
-});
-document.getElementById('nav-about').addEventListener('click', function(e) {
-  e.preventDefault();
-  scrollToSection('.Aboutme');
-});
-document.getElementById('nav-skills').addEventListener('click', function(e) {
-  e.preventDefault();
-  scrollToSection('.Skill');
-});
-document.getElementById('nav-projects').addEventListener('click', function(e) {
-  e.preventDefault();
-  scrollToSection('.featured');
-});
-document.getElementById('nav-contact').addEventListener('click', function(e) {
-  e.preventDefault();
-  window.scrollTo({
-    top: document.documentElement.scrollHeight,
-    behavior: 'smooth'
-  });
-});
-// Resume link is direct download, no scroll needed
-
-
 function updateClock() {
     const now = new Date();
     
@@ -378,21 +330,6 @@ function updateClock() {
 // Initialize clock
 updateClock();
 setInterval(updateClock, 1000);
-
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.project-link').forEach(link => {
-    link.addEventListener('click', async (e) => {
-      e.preventDefault(); // <-- Stops browser from opening a new 404 URL!
-
-      const url = link.getAttribute('href');
-      if (typeof loadContent === 'function') {
-        await loadContent(url);
-      } else {
-        console.warn('loadContent is not defined for .project-link:', url);
-      }
-    });
-  });
-});
 
 document.addEventListener('DOMContentLoaded', function() {
   const certificateGrid = document.querySelector('.certificates-grid');
@@ -514,15 +451,3 @@ function loop() {
   requestAnimationFrame(loop);
 }
 loop();
-
-
-
-// mobile hide
-
-// if (window.innerWidth <= 768) {
-//   // Target a card inside a specific container using CSS hierarchy
-//   const specificCard = document.querySelector('.my-container .card-2');
-//   if (specificCard) {
-//     specificCard.remove();
-//   }
-// }
