@@ -56,6 +56,29 @@ document.addEventListener('mousemove', (e) => {
   }
 });
 
+const avatar = document.querySelector('.avatar');
+if (avatar) {
+  const resetAvatarTilt = () => {
+    avatar.style.setProperty('--avatar-rotate-x', '0deg');
+    avatar.style.setProperty('--avatar-rotate-y', '0deg');
+  };
+
+  avatar.addEventListener('pointermove', (event) => {
+    if (event.pointerType === 'touch' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    const bounds = avatar.getBoundingClientRect();
+    const horizontalPosition = (event.clientX - bounds.left) / bounds.width;
+    const verticalPosition = (event.clientY - bounds.top) / bounds.height;
+
+    avatar.style.setProperty('--avatar-rotate-x', `${(0.5 - verticalPosition) * 12}deg`);
+    avatar.style.setProperty('--avatar-rotate-y', `${(horizontalPosition - 0.5) * 12}deg`);
+  });
+
+  avatar.addEventListener('pointerleave', resetAvatarTilt);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
