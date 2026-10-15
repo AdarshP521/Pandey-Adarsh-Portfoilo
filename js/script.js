@@ -44,7 +44,9 @@ function typeEffect() {
   setTimeout(typeEffect, isDeleting ? 80 : 100); // Back speed: 80ms, Type speed: 100ms
 }
 
-typeEffect();
+if (dynamicText) {
+  typeEffect();
+}
 
 const cursorDot = document.querySelector('.cursor-dot');
 
