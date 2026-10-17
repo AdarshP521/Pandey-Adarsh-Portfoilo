@@ -3,362 +3,386 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pandey Adarsh / Projects</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
+    <meta name="theme-color" content="#080a16" />
+    <meta
+      name="description"
+      content="Explore Pandey Adarsh's software, AI, product design, and web development projects."
     />
+    <title>Projects — Pandey Adarsh</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-          <h2>All Projects (This is Under Construction)</h2>
+    <div class="scroll-indicator" aria-hidden="true"></div>
+
+    <header class="navbar">
+      <a class="logo" href="../index.html">Pandey Adarsh</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="#projects" class="active" aria-current="page">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
-<!-- 
-    <div class="card">
-        <img src="project img\Portfolio Mockup.png" alt="Personal Portfolio" />
-        <h3>Personal Portfolio</h3>
-        <p>&#9672 HTML &#9672 CSS &#9672 Javascript &#9672 On-Page SEO &#9672</p>
+    <main>
+      <section class="hero projects-hero" id="home">
+        <div class="intro">
+          <div class="maintxt">
+            <p class="hi">Selected work · 2022—2026</p>
+            <h1 class="name">Things I’ve<br />made.</h1>
+            <p class="hero-description">
+              A collection of software, AI experiments, product designs, and
+              little ideas brought to life.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="#projects">Explore projects <span aria-hidden="true">↓</span></a>
+              <a class="project-tag" href="../index.html">Back to portfolio</a>
+            </div>
+            <div class="project-summary">
+              <span class="summary-number">26</span>
+              <span>projects across code, design &amp; AI</span>
+            </div>
+          </div>
+        </div>
+        <div class="tags" aria-label="Project areas">
+          <span>Software</span>
+          <span>Web development</span>
+          <span>Generative AI</span>
+          <span>Product design</span>
+          <span>Open source</span>
+        </div>
+      </section>
 
-        <div class="vmbtn">
-              <a href="https://pandeyadarshyt.netlify.app/" target="_blank" rel="noopener noreferrer">
-                         <button class="custom-button">Explore Portfolio &raquo;</button></a>
+      <section class="featured project-showcase" id="projects">
+        <div class="section-intro">
+          <p class="section-eyebrow">A little bit of everything</p>
+          <h2>All Projects</h2>
+          <p>Explore the full collection of software, AI, and product design projects.</p>
+        </div>
 
-              <a href="https://github.com/AdarshP521/Pandey-Adarsh-Portfoilo" target="_blank" rel="noopener noreferrer">
-                         <button class="custom-button">&lt;/&gt; GitHub</button></a>
+        <div class="projects project-grid">
+          <article class="card" data-project-group="web-live">
+            <img src="project img/Portfolio Mockup.png" alt="Personal Portfolio website preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Web development</span>
+              <h3>Personal Portfolio</h3>
+              <p>A responsive portfolio that brings together my development work, design projects, experience, and achievements. Built to make it easy to explore what I do and get in touch.</p>
+              <div class="card-tags-projects"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">SEO</span></div>
+              <div class="project-actions">
+                <a class="custom-button" href="https://pandeyadarshyt.netlify.app/" target="_blank" rel="noopener noreferrer">Explore portfolio <span aria-hidden="true">↗</span></a>
+                <a class="custom-button button-secondary" href="https://github.com/AdarshP521/Pandey-Adarsh-Portfoilo" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
               </div>
-         </div>
-      
-            <div class="card">
-        <img src="project img\bot press bot.png" alt="Pandey's BOT" />
-        <h3>Pandey's BOT</h3>
-          <p>&#9672  Botpress &#9672 CSS &#9672 Logic &#9672 Prototyping &#9672</p>
+            </div>
+          </article>
 
-        <div class="vmbtn">
-              <a href="https://cdn.botpress.cloud/webchat/v3.1/shareable.html?configUrl=https://files.bpcontent.cloud/2025/06/15/06/20250615065031-3O0KWX3Y.json" target="_blank" rel="noopener noreferrer">
-                         <button class="custom-button">Explore Bot Flow &raquo;</button></a>
+          <article class="card" data-project-group="ai-live">
+            <img src="project img/bot press bot.png" alt="Pandey's Bot project preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Conversational AI</span>
+              <h3>Pandey's BOT</h3>
+              <p>An interactive conversational assistant built in Botpress to explore chatbot logic, guided dialogue, and a practical support flow. Open the demo to try its conversation yourself.</p>
+              <div class="card-tags-projects"><span class="tag">Botpress</span><span class="tag">CSS</span><span class="tag">Logic</span><span class="tag">Prototyping</span></div>
+              <div class="project-actions"><a class="custom-button" href="https://cdn.botpress.cloud/webchat/v3.1/shareable.html?configUrl=https://files.bpcontent.cloud/2025/06/15/06/20250615065031-3O0KWX3Y.json" target="_blank" rel="noopener noreferrer">Explore bot flow <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
 
-              <a href="https://techfabyt.blogspot.com/2025/08/pandeys-bot-over-past-few-weeks-i.html" target="_blank" rel="noopener noreferrer">
-                         <button class="custom-button">&lt;/&gt; Images</button></a>
+          <article class="card" data-project-group="design-live">
+            <img src="project img/crypto view tn.png" alt="CrypTracker app design preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Product design</span>
+              <h3>CrypTracker App</h3>
+              <p>A FinTech product concept for keeping crypto activity in one place, with a portfolio overview for tracking performance and flows for coin swaps and UPI payments. The Figma prototype presents the core screens and user journey.</p>
+              <div class="card-tags-projects"><span class="tag">UI/UX</span><span class="tag">Figma</span><span class="tag">FinTech</span><span class="tag">SaaS</span></div>
+              <div class="project-actions"><a class="custom-button" href="https://www.figma.com/proto/EMYSPboYnyWF6nFekHNGyk/Cryptracker?node-id=0-1&amp;t=E0zDh7manQwOvcEH-1" target="_blank" rel="noopener noreferrer">Open prototype <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
+
+          <article class="card" data-project-group="design-live">
+            <img src="project img/car tnmockups.png" alt="Car dealership app design preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Product design</span>
+              <h3>Dealership App</h3>
+              <p>A mobile experience concept for browsing a car dealership, shaped from early wireframes into a clickable Figma prototype. The design focuses on making vehicle discovery and the customer journey easy to follow.</p>
+              <div class="card-tags-projects"><span class="tag">UI/UX</span><span class="tag">Figma</span><span class="tag">Prototyping</span></div>
+              <div class="project-actions"><a class="custom-button" href="https://www.figma.com/proto/9ygJYar5jmxYgGdodwgwHU/CAR--Dealership-App?node-id=0-1&amp;t=4zyKHYVWArebibsR-1" target="_blank" rel="noopener noreferrer">Open prototype <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
+
+          <article class="card" data-project-group="design-live">
+            <img src="project img/Hostellinker Thumbnail.png" alt="HostelLinker app design preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Product design</span>
+              <h3>HostelLinker App</h3>
+              <p>A student-focused hostel app concept aimed at making hostel activities, useful information, and community connections easier to access. Explore the prototype to follow the main screens and product flow.</p>
+              <div class="card-tags-projects"><span class="tag">UI/UX</span><span class="tag">Figma</span><span class="tag">EdTech</span><span class="tag">Prototyping</span></div>
+              <div class="project-actions">
+                <a class="custom-button" href="https://www.linkedin.com/posts/pandeyadarsh521_productdesign-startup-hostellife-activity-7313293189476483074-TWoa?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAEpa9v4BAsyEOkkTWwXVcKHFVFr166T5GRc" target="_blank" rel="noopener noreferrer">View details <span aria-hidden="true">↗</span></a>
+                <a class="custom-button button-secondary" href="https://www.figma.com/proto/6Py8BJjxfTSeRh9YBCV81I/Hostel_Linker?node-id=0-1&amp;t=rs5BavaORCDECsXO-1" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a>
               </div>
-         </div>
-  </div> -->
+            </div>
+          </article>
 
+          <article class="card" data-project-group="design-live">
+            <img src="project img/EF-EG tn.png" alt="EF-EG app design preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Product design</span>
+              <h3>EF-EG App</h3>
+              <p>A mobile app concept developed through the product-design process, from initial wireframes to a linked Figma prototype. The screens demonstrate a clear, consistent interface and end-to-end navigation.</p>
+              <div class="card-tags-projects"><span class="tag">UI/UX</span><span class="tag">Figma</span><span class="tag">Prototyping</span></div>
+              <div class="project-actions"><a class="custom-button" href="https://www.figma.com/proto/li8q84n1tM2N0snRmnVqqI/EF-EG?node-id=0-1&amp;t=1UvGoYsR21yHoT6X-1" target="_blank" rel="noopener noreferrer">Open prototype <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
 
+          <article class="card" data-project-group="web-live">
+            <img src="project img/life problem solver tn.png" alt="Life Problem Solver website preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Web development</span>
+              <h3>Life Problem Solver</h3>
+              <p>A web-based tool designed to help people work through everyday problems and identify useful next steps. Visit the live site to explore its interface and the problem-solving experience.</p>
+              <div class="card-tags-projects"><span class="tag">Frontend</span><span class="tag">HTML</span><span class="tag">Web design</span></div>
+              <div class="project-actions"><a class="custom-button" href="https://lifeproblemsolver.netlify.app/" target="_blank" rel="noopener noreferrer">See it in action <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
 
+          <article class="card" data-project-group="design-live">
+            <img src="project img/airpods app.png" alt="Apple AirPods app design preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Product design</span>
+              <h3>Apple AirPods App</h3>
+              <p>A companion-app concept for Apple AirPods, exploring how device controls and useful headphone features can be presented in a focused mobile interface. The clickable Figma prototype walks through the visual design.</p>
+              <div class="card-tags-projects"><span class="tag">UI/UX</span><span class="tag">Figma</span><span class="tag">Prototyping</span></div>
+              <div class="project-actions"><a class="custom-button" href="https://www.figma.com/proto/EsMKTOGaojnapNDV4RIHEN/Apple-AirPods-App?node-id=0-1&amp;t=6AWYjY0XNQdznSo3-1" target="_blank" rel="noopener noreferrer">Open prototype <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
 
-            <div class="card">
-        <img src="project img\Portfolio Mockup.png" alt="Personal Portfolio" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>Personal Portfolio</h3>
-        <p>&#9672 HTML &#9672 CSS &#9672 Javascript &#9672 On-Page SEO &#9672</p>
-          </div>
-           <a href="https://pandeyadarshyt.netlify.app/" target="_blank" rel="noopener noreferrer">
-                         <button class="custom-button">Explore Portfolio &raquo;</button></a>
+          <article class="card" data-project-group="web-live">
+            <img src="project img/01 Free Ipad Pro Mockup On Wood.png" alt="Social Media Links on a tablet mockup" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Web development</span>
+              <h3>Social Media Links</h3>
+              <p>A compact, branded landing page that collects social profiles and creator links in one place. Its straightforward layout is designed to help visitors find the right channel quickly.</p>
+              <div class="card-tags-projects"><span class="tag">Frontend</span><span class="tag">Web design</span></div>
+              <div class="project-actions"><a class="custom-button" href="https://pandey-adarsh.lovable.app/" target="_blank" rel="noopener noreferrer">See it in action <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
 
-              <!-- <a href="https://github.com/AdarshP521/Pandey-Adarsh-Portfoilo" target="_blank" rel="noopener noreferrer">
-                         <button class="custom-button">&lt;/&gt; GitHub</button></a> -->
+          <article class="card" data-project-group="web-live">
+            <img src="project img/Screenshot 2025-06-07 143720.png" alt="Landing page design preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Web design</span>
+              <h3>Landing Page</h3>
+              <p>A visually led landing-page concept brought to life as a web experience. The project combines interface design and frontend implementation to make its content easy to scan and explore.</p>
+              <div class="card-tags-projects"><span class="tag">UI/UX</span><span class="tag">Frontend</span><span class="tag">Wireframing</span></div>
+              <div class="project-actions"><a class="custom-button" href="https://techfabyt.dora.run/" target="_blank" rel="noopener noreferrer">Quick overview <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
+
+          <article class="card" data-project-group="web-live">
+            <img src="project img/01 Ipad Pro Mockup On Rock.png" alt="Study Level Tracker tablet mockup" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">EdTech</span>
+              <h3>Study Level Tracker</h3>
+              <p>A student-oriented tracker for organizing study activity and following progress over time. The project brings product design and frontend development together in a focused EdTech experience.</p>
+              <div class="card-tags-projects"><span class="tag">Frontend</span><span class="tag">Product design</span></div>
+              <div class="project-actions"><a class="custom-button" href="https://studymeter24.netlify.app/" target="_blank" rel="noopener noreferrer">See it in action <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
+
+          <article class="card" data-project-group="web-live">
+            <img src="project img/biet codes.png" alt="BIET Codes website preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Web development</span>
+              <h3>BIET CODES</h3>
+              <p>A college-oriented coding and content site created for the BIET community. It pairs web publishing with search-friendly page structure to make its resources and articles easy to discover.</p>
+              <div class="card-tags-projects"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">SEO</span></div>
+              <div class="project-actions"><a class="custom-button" href="https://bietcodes.blogspot.com/" target="_blank" rel="noopener noreferrer">Explore website <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
+
+          <article class="card" data-project-group="web-live">
+            <img src="project img/Screenshot 2025-06-07 143828.png" alt="Photography website preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Web design</span>
+              <h3>Photography Website</h3>
+              <p>A photography website concept that gives visual work room to lead through a clear, image-focused presentation. Web design, photo editing, and SEO contribute to a polished browsing experience.</p>
+              <div class="card-tags-projects"><span class="tag">Web design</span><span class="tag">Photo editing</span><span class="tag">SEO</span></div>
+              <div class="project-actions"><a class="custom-button" href="https://sagarsnapai.renderforestsites.com/" target="_blank" rel="noopener noreferrer">Explore website <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
+
+          <article class="card" data-project-group="design-live">
+            <img src="project img/smarti.png" alt="NeedNest (Smarti) product design preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Product design</span>
+              <h3>NeedNest (Smarti)</h3>
+              <p>A product-design concept developed through wireframing and web interface design. The Figma prototype communicates the idea through a sequence of connected screens and a consistent visual direction.</p>
+              <div class="card-tags-projects"><span class="tag">Product design</span><span class="tag">Wireframing</span><span class="tag">Web design</span></div>
+              <div class="project-actions"><a class="custom-button" href="https://www.figma.com/proto/doaG7Tx7ZRwCbGR6wPPihJ/NeedNest--Smarti-?node-id=0-1&amp;t=9B0mIcy85Blhho9U-1" target="_blank" rel="noopener noreferrer">See it in action <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
+
+          <article class="card" data-project-group="design-no-demo">
+            <img src="project img/Screenshot 2025-06-07 145409.png" alt="Netflix app clone design preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Product design</span>
+              <h3>Netflix App Clone</h3>
+              <p>A streaming-app interface study that reimagines familiar entertainment browsing patterns as a cohesive mobile experience. The Figma design explores screen layouts, navigation, and visual hierarchy.</p>
+              <div class="card-tags-projects"><span class="tag">UI/UX</span><span class="tag">Figma</span><span class="tag">Prototyping</span></div>
+              <div class="project-actions"><a class="custom-button" href="https://www.figma.com/design/6CmNZXSEmEyfw7QOl5Ba9U/NETFLIX-CLONE-by-Pandey?node-id=0-1&amp;t=PDTZ0WGcoKSgN1on-1" target="_blank" rel="noopener noreferrer">UI breakdown <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
+
+          <article class="card" data-project-group="design-live">
+            <img src="project img/Screenshot 2025-06-07 144646.png" alt="StudyMate app design preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Product design</span>
+              <h3>StudyMate App</h3>
+              <p>A study companion concept designed to help learners approach study sessions with more structure and focus. Explore the prototype to see how its key screens fit together into a student-friendly flow.</p>
+              <div class="card-tags-projects"><span class="tag">UI/UX</span><span class="tag">Figma</span><span class="tag">Prototyping</span></div>
+              <div class="project-actions"><a class="custom-button" href="https://www.figma.com/proto/esZHuTiBvr6Hyw6vY21KVl/StudyMate?node-id=0-1&amp;t=TBPtvBn14HZqRjsD-1" target="_blank" rel="noopener noreferrer">Open prototype <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
+
+          <article class="card" data-project-group="design-no-demo">
+            <img src="project img/Screenshot 2025-06-07 145259.png" alt="Spotify app clone design preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Product design</span>
+              <h3>Spotify App Clone</h3>
+              <p>A music-streaming interface study based on familiar listening and content-browsing patterns. The Figma design explores how to organize music discovery and playback in a recognizable interface.</p>
+              <div class="card-tags-projects"><span class="tag">UI/UX</span><span class="tag">Figma</span><span class="tag">Prototyping</span></div>
+              <div class="project-actions"><a class="custom-button" href="https://www.figma.com/design/i1PTOcVn4hpHsi6IqPKtrx/Spotify-Clone-By-Pandey?node-id=0-1&amp;t=bfsyvyQpTxoDVtRB-1" target="_blank" rel="noopener noreferrer">UI breakdown <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
+
+          <article class="card" data-project-group="web-live">
+            <img src="project img/Screenshot 2025-06-07 143626.png" alt="Tech Fab website preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Web development</span>
+              <h3>Tech Fab Website</h3>
+              <p>The home of Tech Fab, a technology blog and creator platform for publishing original articles and web content. The project combines web publishing, page styling, and on-page SEO.</p>
+              <div class="card-tags-projects"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">SEO</span></div>
+              <div class="project-actions"><a class="custom-button" href="https://techfabyt.blogspot.com/" target="_blank" rel="noopener noreferrer">Explore website <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
+
+          <article class="card" data-project-group="web-live">
+            <img src="project img/yt clone mockup.png" alt="YouTube clone website preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Web development</span>
+              <h3>YouTube Clone</h3>
+              <p>A frontend recreation of a video platform that explores familiar browsing and content layouts in the browser. Built with HTML and CSS, the project focuses on interface structure and visual presentation.</p>
+              <div class="card-tags-projects"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">UI/UX</span></div>
+              <div class="project-actions"><a class="custom-button" href="https://adarshp521.github.io/Youtube-Clone-by-Pandey/" target="_blank" rel="noopener noreferrer">See it in action <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
+
+          <article class="card" data-project-group="web-live">
+            <img src="project img/clock mockup.png" alt="Live clock website preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Web development</span>
+              <h3>Live Clock</h3>
+              <p>A browser-based clock that displays the current time in a custom circular design. The project uses JavaScript to keep the display live and pairs it with a responsive, purpose-built interface.</p>
+              <div class="card-tags-projects"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+              <div class="project-actions"><a class="custom-button" href="https://adarshp521.github.io/Circular-Clock/" target="_blank" rel="noopener noreferrer">Quick overview <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
+
+          <article class="card" data-project-group="web-live">
+            <img src="../project img/torofolio mockup.png" alt="ToroFolio stock portfolio dashboard" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Software · FinTech</span>
+              <h3>ToroFolio</h3>
+              <p>A stock-market dashboard for exploring market information and keeping an investment portfolio organized. Built with JavaScript, Flask, and SQLite, it connects market data through the Finnhub API and includes a simulated mode.</p>
+              <div class="card-tags-projects"><span class="tag">JavaScript</span><span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">Finnhub API</span></div>
+              <div class="project-actions">
+                <a class="custom-button" href="https://github.com/AdarshP521/ToroFolio" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+                <a class="custom-button button-secondary" href="https://adarshp521.github.io/ToroFolio/" target="_blank" rel="noopener noreferrer">Simulated mode <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-project-group="web-live">
+            <img src="../project img/visionas.png" alt="Face recognition attendance system" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Software · Computer vision</span>
+              <h3>Attendance System</h3>
+              <p>A face-recognition attendance system designed to help educational institutions manage attendance in real time. The project pairs a React interface with a Node.js and MySQL backend, with jsPDF support for exporting records.</p>
+              <div class="card-tags-projects"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MySQL</span><span class="tag">jsPDF</span></div>
+              <div class="project-actions">
+                <a class="custom-button" href="https://github.com/AdarshP521/VISION-SIH-2025" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+                <a class="custom-button button-secondary" href="https://visionas.netlify.app/" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-project-group="ai-live">
+            <img src="../project img/subtitle wallah ai .png" alt="Subtitle Wallah AI caption generator" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Software · Generative AI</span>
+              <h3>Subtitle Wallah AI</h3>
+              <p>A browser-based image-captioning tool that uses Google's Gemini API to generate descriptions for social media. Its lightweight HTML, CSS, and JavaScript interface makes the image-to-caption workflow simple to try.</p>
+              <div class="card-tags-projects"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Gemini API</span></div>
+              <div class="project-actions">
+                <a class="custom-button" href="https://github.com/AdarshP521/Caption-Wala-Ai" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+                <a class="custom-button button-secondary" href="https://subtitlewallahai.netlify.app/" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-project-group="web-live">
+            <img src="../project img/tower of hanoi.png" alt="Interactive Tower of Hanoi puzzle" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Software · JavaScript</span>
+              <h3>Tower of Hanoi</h3>
+              <p>An interactive browser version of the classic Tower of Hanoi logic puzzle. Built with HTML, CSS, and JavaScript, it brings the familiar disk-moving challenge into a simple web experience.</p>
+              <div class="card-tags-projects"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span></div>
+              <div class="project-actions">
+                <a class="custom-button" href="https://github.com/AdarshP521/Tower-of-Hanoi" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+                <a class="custom-button button-secondary" href="https://adarshp521.github.io/Tower-of-Hanoi/" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-project-group="web-no-demo">
+            <img src="../project img/chat app.png" alt="Real-time chat application preview" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Software · Full stack</span>
+              <h3>Chat Application</h3>
+              <p>A lightweight full-stack messaging app built to explore live, bidirectional communication between browser and server. Node.js, Express, and Socket.IO power its event-based chat experience.</p>
+              <div class="card-tags-projects"><span class="tag">Node.js</span><span class="tag">Socket.IO</span><span class="tag">Express.js</span><span class="tag">HTML</span></div>
+              <div class="project-actions">
+                <a class="custom-button" href="https://github.com/AdarshP521/Chat-App-with-Socket.IO" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+                <a class="custom-button button-secondary" href="https://lnkd.in/p/d_Jv7cVB" target="_blank" rel="noopener noreferrer">View details <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-project-group="ai-live">
+            <img src="project img/bot press bot.png" alt="PandeyLLM retrieval-augmented generation assistant" loading="lazy" />
+            <div class="project-card-content">
+              <span class="project-type">Software · Generative AI</span>
+              <h3>PandeyLLM — RAG</h3>
+              <p>A DBMS study assistant that retrieves relevant material and combines it with language-model responses using a retrieval-augmented generation workflow. Built with Python, LangChain, and LLM APIs to make course topics easier to explore.</p>
+              <div class="card-tags-projects"><span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">RAG</span><span class="tag">LLM APIs</span></div>
+              <div class="project-actions">
+                <a class="custom-button" href="https://www.linkedin.com/posts/pandeyadarsh521_bot-ai-botpress-activity-7345797457538150400-aiyP?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAEpa9v4BAsyEOkkTWwXVcKHFVFr166T5GRc" target="_blank" rel="noopener noreferrer">View details <span aria-hidden="true">↗</span></a>
+                <a class="custom-button button-secondary" href="https://cdn.botpress.cloud/webchat/v3.1/shareable.html?configUrl=https://files.bpcontent.cloud/2025/06/15/06/20250615065031-3O0KWX3Y.json" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+
         </div>
-            
-      </div>
+      </section>
 
-      
-            <div class="card">
-       <img src="project img\bot press bot.png" alt="Pandey's BOT" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>Pandey's BOT</h3>
-          <p>&#9672  Botpress &#9672 CSS &#9672 Logic &#9672 Prototyping &#9672</p>
-          </div>
-              <a href="https://cdn.botpress.cloud/webchat/v3.1/shareable.html?configUrl=https://files.bpcontent.cloud/2025/06/15/06/20250615065031-3O0KWX3Y.json" target="_blank" rel="noopener noreferrer">
-                         <button class="custom-button">Explore Bot Flow &raquo;</button></a>
-<!-- 
-              <a href="https://techfabyt.blogspot.com/2025/08/pandeys-bot-over-past-few-weeks-i.html" target="_blank" rel="noopener noreferrer">
-                         <button class="custom-button">&lt;/&gt; Images</button></a> -->
-        </div>
-      </div>
-      
+      <section class="contact us project-contact" id="contact">
+        <p class="section-eyebrow">Have something in mind?</p>
+        <h2>Let’s build something good.</h2>
+        <a class="custom-button" href="../index.html#contact">Get in touch <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
 
-      
-            <div class="card">
-        <img src="project img\crypto view tn.png" alt="CrypTracker App" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>CrypTracker App</h3>
-            <p>&#9672 UI/UX &#9672 Figma &#9672 Prototyping &#9672 Wireframing &#9672   </p>
-          </div>
-          <a href="https://www.figma.com/proto/EMYSPboYnyWF6nFekHNGyk/Cryptracker?node-id=0-1&t=E0zDh7manQwOvcEH-1" target="_blank" rel="noopener noreferrer"><button class="custom-button">Open Prototype &raquo;</button></a>
-        </div>
-            
-      </div>
-
-      
-            <div class="card">
-        <img src="project img\car tnmockups.png" alt="Dealership App" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>Dealership App</h3>
-            <p>&#9672 UI/UX &#9672 Figma &#9672 Prototyping &#9672 Wireframing &#9672   </p>
-          </div>
-          <a href="https://www.figma.com/proto/9ygJYar5jmxYgGdodwgwHU/CAR--Dealership-App?node-id=0-1&t=4zyKHYVWArebibsR-1" target="_blank" rel="noopener noreferrer"><button class="custom-button">Open Prototype &raquo;</button></a>
-        </div>
-      </div>
-      
-
-      
-            <div class="card">
-        <img src="project img\Hostellinker Thumbnail.png" alt="HostelLinker App" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>HostelLinker App</h3>
-            <p>&#9672 UI/UX &#9672 Figma &#9672 Prototyping &#9672 Wireframing &#9672   </p>
-          </div>
-          <a href="https://www.figma.com/proto/6Py8BJjxfTSeRh9YBCV81I/Hostel_Linker?node-id=0-1&t=rs5BavaORCDECsXO-1" target="_blank" rel="noopener noreferrer"><button class="custom-button">Open Prototype &raquo;</button></a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-
-      <div class="card">
-        <img src="project img\EF-EG tn.png" alt="EF-EG App" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>EF-EG App</h3>
-            <p>&#9672 UI/UX &#9672 Figma &#9672 Prototyping &#9672 Wireframing &#9672   </p>
-          </div>
-          <a href="https://www.figma.com/proto/li8q84n1tM2N0snRmnVqqI/EF-EG?node-id=0-1&t=1UvGoYsR21yHoT6X-1" target="_blank" rel="noopener noreferrer"><button class="custom-button">Open Prototype &raquo;</button></a>
-        </div>
-      </div>
-
-            <div class="card">
-        <img src="project img\life problem solver tn.png" alt="HostelLinker App" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>Life Problem Solver</h3>
-            <p>&#9672  Frontend Development &#9672 HTML &#9672 Wireframing &#9672   </p>
-          </div>
-          <a href="https://lifeproblemsolver.netlify.app/" target="_blank" rel="noopener noreferrer"><button class="custom-button">See in Action &raquo;</button></a>
-        </div>
-      </div>
-
-            <div class="card">
-        <img src="project img\airpods app.png" alt="Apple Airpods App" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>Apple Airpods App</h3>
-            <p>&#9672 UI/UX &#9672 Figma &#9672 Prototyping &#9672 Wireframing &#9672   </p>
-          </div>
-          <a href="https://www.figma.com/proto/EsMKTOGaojnapNDV4RIHEN/Apple-AirPods-App?node-id=0-1&t=6AWYjY0XNQdznSo3-1" target="_blank" rel="noopener noreferrer"><button class="custom-button">Open Prototype &raquo;</button></a>
-        </div>
-      </div>
-      
-    </div>
-  </div> 
-
-
-
-                  <div class="card">
-        <img src="project img\01 Free Ipad Pro Mockup On Wood.png" alt="Personal links loveable" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>Social Media Links</h3>
-            <p>&#9672 Frontend Development &#9672 Web Design &#9672   </p>
-          </div>
-          <a href="https://pandey-adarsh.lovable.app/" target="_blank" rel="noopener noreferrer"><button class="custom-button">See in Action &raquo;</button></a>
-        </div>
-      </div>
-
-            <div class="card">
-        <img src="project img\Screenshot 2025-06-07 143720.png" alt="Landing Page" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>Landing Page </h3>
-            <p>&#9672 UI/UX &#9672 Frontend Development &#9672 Wireframing &#9672    </p>
-          </div>
-          <a href="https://techfabyt.dora.run/" target="_blank" rel="noopener noreferrer"><button class="custom-button">Quick Overview &raquo;</button></a>
-        </div>
-      </div>
-
-                  <div class="card">
-        <img src="project img\01 Ipad Pro Mockup On Rock.png" alt="Study Tracker" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>Study Level Tracker</h3>
-            <p> &#9672 Frontend Development &#9672 Product Designing &#9672   </p>
-          </div>
-          <a href="https://studymeter24.netlify.app/" target="_blank" rel="noopener noreferrer"><button class="custom-button">See in Action &raquo;</button></a>
-        </div>
-      </div>
-
-
-
-
-                  <div class="card">
-        <img src="project img\biet codes.png" alt="BIET CODES" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>BIET CODES</h3>
-            <p>&#9672 HTML &#9672 CSS &#9672 Blog Writing &#9672 On-Page SEO &#9672   </p>
-          </div>
-          <a href="https://bietcodes.blogspot.com/" target="_blank" rel="noopener noreferrer"><button class="custom-button">Built for [BIET] &raquo;</button></a>
-        </div>
-      </div>
-
-            <div class="card">
-        <img src="project img\Screenshot 2025-06-07 143828.png" alt="Photography Website" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>Photography Website</h3>
-            <p>&#9672 Web Design &#9672 Photo Editing    &#9672    SEO &#9672    </p>
-          </div>
-          <a href="https://sagarsnapai.renderforestsites.com/" target="_blank" rel="noopener noreferrer"><button class="custom-button">Explore Website &raquo;</button></a>
-        </div>
-      </div>
-
-            <div class="card">
-        <img src="project img\smarti.png" alt="NeedNest (Smarti)" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>NeedNest (Smarti)</h3>
-            <p> &#9672 Product Design &#9672 Wireframing   &#9672 Web Design &#9672   </p>
-          </div>
-          <a href="https://www.figma.com/proto/doaG7Tx7ZRwCbGR6wPPihJ/NeedNest--Smarti-?node-id=0-1&t=9B0mIcy85Blhho9U-1" target="_blank" rel="noopener noreferrer"><button class="custom-button">See in Action &raquo;</button></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  
-
-
-
-      <div class="card">
-        <img src="project img\Screenshot 2025-06-07 145409.png" alt="Netflix App Clone" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>Netflix App Clone</h3>
-            <p>&#9672 UI/UX &#9672 Figma &#9672 Prototyping &#9672 Wireframing &#9672   </p>
-          </div>
-          <a href="https://www.figma.com/design/6CmNZXSEmEyfw7QOl5Ba9U/NETFLIX-CLONE-by-Pandey?node-id=0-1&t=PDTZ0WGcoKSgN1on-1" target="_blank" rel="noopener noreferrer">
-            <button class="custom-button">UI Breakdown &raquo;</button>
-          </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="project img\Screenshot 2025-06-07 144646.png" alt="StudyMate App" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>StudyMate App</h3>
-            <p>&#9672 UI/UX &#9672 Figma &#9672 Prototyping &#9672 Wireframing &#9672   </p>
-          </div>
-          <a href="https://www.figma.com/proto/esZHuTiBvr6Hyw6vY21KVl/StudyMate?node-id=0-1&t=TBPtvBn14HZqRjsD-1" target="_blank" rel="noopener noreferrer"><button class="custom-button">Open Prototype &raquo;</button></a>
-        </div>
-      </div>
-
-            <div class="card">
-        <img src="project img\Screenshot 2025-06-07 145259.png" alt="Spotify App Clone" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>Spotify App Clone</h3>
-            <p>&#9672 UI/UX &#9672 Figma &#9672 Prototyping &#9672 Wireframing &#9672   </p>
-          </div>
-          <a href="https://www.figma.com/design/i1PTOcVn4hpHsi6IqPKtrx/Spotify-Clone-By-Pandey?node-id=0-1&t=bfsyvyQpTxoDVtRB-1" target="_blank" rel="noopener noreferrer"><button class="custom-button">UI Breakdown &raquo;</button></a>
-        </div>
-      </div>
-    </div>
-
-    
-  
-
-
-
-            <div class="card">
-        <img src="project img\Screenshot 2025-06-07 143626.png" alt="Tech Fab Website" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>Tech Fab Website</h3>
-            <p>&#9672 HTML &#9672 CSS &#9672 Blog Writing &#9672 On-Page SEO &#9672 </p>
-          </div>
-          <a href="https://techfabyt.blogspot.com/" target="_blank" rel="noopener noreferrer">
-            <button class="custom-button">Explore Website &raquo;</button>
-          </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="project img\yt clone mockup.png" alt="Youtube CLone" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>Youtube Clone</h3>
-            <p>&#9672 HTML &#9672 CSS &#9672 UI/UX &#9672</p>
-          </div>
-          <a href="https://adarshp521.github.io/Youtube-Clone-by-Pandey/" target="_blank" rel="noopener noreferrer"><button class="custom-button">See in Action &raquo;</button></a>
-        </div>
-      </div>
-
-            <div class="card">
-        <img src="project img\clock mockup.png" alt="Live Clock" />
-        <div class="card-body">
-          <div class="card-content">
-            <h3>Live Clock</h3>
-            <p>&#9672 HTML &#9672 CSS &#9672 Javascript &#9672 Web Design &#9672</p>
-          </div>
-          <a href="https://adarshp521.github.io/Circular-Clock/" target="_blank" rel="noopener noreferrer"><button class="custom-button">Quick Overview &raquo;</button></a>
-        </div>
-      </div>
-    </div>
-  
-
-        <!-- sih projects  -->
-    <!-- 
-    <div class="sih">
-      <h2>Smart India Hackathon <img src="sih\GG 2025.png" alt=""></h2>
-    </div>
-
-    <div class="projects1">
-
-
-      <div class="card">
-        <img src="sih\Smart Curriculum Activity & Attendance App TN.png" alt="Tech Fab Website" />
-        <h3>PS-25011 App</h3>
-        <p>&#9672 UI/UX &#9672 Figma &#9672 Prototyping &#9672 Wireframing &#9672</p>
-        <a href="https://www.figma.com/proto/npoGENRyFspRVqVUTAJcGd/%C2%A9VISION-SIH-2025?node-id=0-1&p=f&viewport=624%2C442%2C0.19&t=Gf6u7Mk7uHqd3Zm0-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A461&show-proto-sidebar=1"
-          target="_blank" rel="noopener noreferrer">
-          <button class="custom-button">Open Prototype &raquo;</button>
-        </a>
-      </div>
-
-      <div class="card">
-        <img src="sih\tech_used.png" alt="Youtube CLone" />
-        <h3>Technology Used</h3>
-        <p>&#9672 Wireframing &#9672 Graphic Design &#9672</p>
-        <a href="https://sih.gov.in/uploads/template/SIH2025-VisionBIET20250929191513.pdf" target="_blank"
-          rel="noopener noreferrer">
-          <button class="custom-button">View Full PPT &raquo;</button></a>
-      </div>
-
-      <div class="card">
-        <img src="sih\Sih Attabdence screen.png" alt="Live Clock" />
-        <h3>Live Attandence Screen</h3>
-        <p>&#9672 HTML &#9672 CSS &#9672 Javascript &#9672 Web Design &#9672</p>
-        <a href="https://visionas.netlify.app/" target="_blank" rel="noopener noreferrer">
-          <button class="custom-button">See in Action &raquo;</button></a>
-      </div>
-    </div> -->
-
-    
-
-
-<div class="projects-btn">
-  <a href="../index.html" rel="noopener noreferrer">
-            <button class="custom-button">Back To Main Content &raquo;</button></a>
-</div>
-
-</body>
+    <footer class="footer project-footer">
+      <p>Designed &amp; developed by Pandey Adarsh · © 2026</p>
+      <a href="../index.html">Back to portfolio <span aria-hidden="true">↑</span></a>
+    </footer>
+  </body>
 </html>
